@@ -4,8 +4,9 @@ using UnityEngine.UIElements;
 
 public class PlayerStamina : MonoBehaviour
 {
+    [Header("Stamina Settings")]
     [SerializeField] private float maxStamina = 100f;
-    [SerializeField] private float recoverSpeed = 20f;
+    [SerializeField] private float recoverSpeed = 30f;
     [SerializeField] private float regenCooldownDuration = 1.0f;
 
     public float Ratio => CurrentStamina / maxStamina;
