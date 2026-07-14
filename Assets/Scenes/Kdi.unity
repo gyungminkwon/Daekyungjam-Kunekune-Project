@@ -442,7 +442,8 @@ MonoBehaviour:
   moveSpeed: 8
   sprintSpeed: 12
   costPerSecond: 30
-  minumumSprintStamina: 5
+  exhaustionDuration: 3.5
+  exhaustionSpeedMultiplier: 0.4
   groundCheck: {fileID: 700955838}
   checkRadius: 0.2
   groundLayer:
@@ -613,7 +614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStamina
   maxStamina: 100
-  recoverSpeed: 20
+  recoverSpeed: 30
   regenCooldownDuration: 1
 --- !u!1 &1139129017
 GameObject:

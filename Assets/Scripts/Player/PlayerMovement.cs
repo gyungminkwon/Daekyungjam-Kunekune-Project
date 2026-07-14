@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,7 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Sprint Settings")]
     [SerializeField] private float sprintSpeed = 12f;
     [SerializeField] private float costPerSecond = 30f;
-    [SerializeField] private float minumumSprintStamina = 5f; // 달리기를 시작하기 위한 최소 스태미너
+
+    [Header("Exhaustion")]
+    [SerializeField] private float exhaustionDuration = 3.5f;
+    [SerializeField] private float exhaustionSpeedMultiplier = 0.3f;
+    private bool isExhausted = false; // stamina를 완전히 소모하면 탈진: Shift 키를 뗐다 눌러야 다시 달리기 작동
+    private float exhaustionTimer = 0f;
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
@@ -32,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (input.IsJump && IsGrounded())
+        if (input.IsJump && IsGrounded() && !isExhausted)
         {
             Jump();
         }
@@ -45,20 +51,45 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
+
+        if (isExhausted)
+        {
+            exhaustionTimer -= Time.deltaTime;
+
+            if (exhaustionTimer < 0f && !input.IsSprint)
+            {
+                isExhausted = false;
+            }
+        }
     }
 
     void FixedUpdate()
     {
+        // 기본 속도 설정 (웅크리기 : 50% 감속)
         float speed = input.IsCrouch ? moveSpeed * 0.5f : moveSpeed;
+
+        // 탈진 상태라면 속도를 추가로 감속
+        if (isExhausted)
+        {
+            speed *= exhaustionSpeedMultiplier;
+        }
+
         bool isMoving = Mathf.Abs(input.MoveInput) > 0.01f;
 
         if (stamina != null)
         {
-            bool canSprint = !input.IsCrouch && input.IsSprint && isMoving && stamina.HasStamina(minumumSprintStamina);
+            bool canSprint = !input.IsCrouch && input.IsSprint && !isExhausted && isMoving;
             if (canSprint)
             {
                 speed = sprintSpeed;
                 stamina.ConsumeStamina(costPerSecond * Time.fixedDeltaTime);
+
+                // 달리는 중 스태미나가 바닥나면 탈진 상태 돌입
+                if (stamina.CurrentStamina <= 0f)
+                {
+                    isExhausted = true;
+                    exhaustionTimer = exhaustionDuration;   // 탈진 타이머 시작
+                }
             }
         }
 
