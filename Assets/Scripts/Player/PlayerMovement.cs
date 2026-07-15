@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
-    [SerializeField] private float moveSpeed = 8f;
+    [SerializeField] private float moveSpeed = 5f;
 
     [Header("Sprint Settings")]
-    [SerializeField] private float sprintSpeed = 12f;
+    [SerializeField] private float sprintSpeed = 8f;
     [SerializeField] private float costPerSecond = 30f;
 
     [Header("Exhaustion")]
