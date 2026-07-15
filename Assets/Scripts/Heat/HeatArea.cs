@@ -1,42 +1,59 @@
 using UnityEngine;
 
 public class HeatArea : MonoBehaviour
-{
-    public int heatIntensity = 10;
+{   
+    [Header("Heat delay")]
+    [SerializeField] private float delayBeforeHeat = 0.15f;
 
-    [SerializeField] private float gracePeriod = 0.5f;
-
-    private Collider2D sunCollider;
-    private Transform playerTransform;
-
-    private bool isPlayerInside = false;
-    private float insideTimer = 0f;
-
+    private Collider2D areaCollider;
+    private float timer = 0f;
+    private Transform player;
+    private bool isPlayerIn = false;
+    private bool isRegistered = false;
+    
     void Awake()
     {
-        sunCollider = GetComponent<Collider2D>();
+        areaCollider = GetComponent<Collider2D>();
     }
 
     void Update()
     {
-        if (isPlayerInside && playerTransform != null)
-        {   if (sunCollider.OverlapPoint(playerTransform.position))
+        if (player != null && isPlayerIn)
+        {
+            if (areaCollider.OverlapPoint(player.position))
             {
-                insideTimer += Time.deltaTime;
-                if (insideTimer >= gracePeriod)
+                timer += Time.deltaTime;
+
+                if (timer >= delayBeforeHeat && !isRegistered)
                 {
-                    HeatManager.Instance.HeatUp(heatIntensity);   
+                    HeatManager.Instance.RegisterHeatArea(this);
+                    isRegistered = true;
                 }
+            }
+            else
+            {
+                ResetState();
             }
         }
     }
+
+    private void ResetState()
+    {
+        timer = 0f;
+        if (isRegistered)
+        {
+            HeatManager.Instance.UnregisterHeatArea(this);
+            isRegistered = false;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            isPlayerInside = true;
-            playerTransform = collision.transform;
-            insideTimer = 0f;
+            timer = 0f;
+            player = collision.transform;
+            isPlayerIn = true;
         }
     }
 
@@ -44,9 +61,9 @@ public class HeatArea : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            isPlayerInside = false;
-            playerTransform = null;
-            insideTimer = 0f;
+            isPlayerIn = false;
+            player = null;
+            HeatManager.Instance.UnregisterHeatArea(this);
         }
     }
 }
