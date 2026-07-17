@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: 6bfd48bf0772ee04ebb7fda58b67d4db
+guid: 2145ed359f2c26c4a97bd822c1730498
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6271016540811693176
-    second: PCadult_idel_0
+      213: 6819845463109877499
+    second: PCstudent_standing_0
   - first:
-      213: 4971441822825985941
-    second: PCadult_idel_1
+      213: 81726709977692774
+    second: PCstudent_standing_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,45 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PCadult_idel_0
+      name: PCstudent_standing_0
       rect:
         serializedVersion: 2
-        x: 2
+        x: 5
         y: 0
-        width: 17
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 19
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 87c0eaf8150270750800000000000000
-      internalID: 6271016540811693176
+      spriteID: bfe39bbc055f4ae50800000000000000
+      internalID: 6819845463109877499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PCadult_idel_1
+      name: PCstudent_standing_1
       rect:
         serializedVersion: 2
-        x: 23
+        x: 35
         y: 0
         width: 17
-        height: 47
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 597301f7ffb1ef440800000000000000
-      internalID: 4971441822825985941
+      spriteID: 66ab1ec720a522100800000000000000
+      internalID: 81726709977692774
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a201e43bec2d4644ea847ebfa9d3c4d4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PCadult_idel_0: 6271016540811693176
-      PCadult_idel_1: 4971441822825985941
+      PCstudent_standing_0: 6819845463109877499
+      PCstudent_standing_1: 81726709977692774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
