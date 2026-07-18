@@ -575,6 +575,10 @@ MonoBehaviour:
   staminaGuage: {fileID: 1679916466}
   stamina: {fileID: 824192025}
   heatGuage: {fileID: 2037546732}
+  timeText: {fileID: 0}
+  dDayText: {fileID: 0}
+  warningPanel: {fileID: 0}
+  warningText: {fileID: 0}
 --- !u!4 &350997241
 Transform:
   m_ObjectHideFlags: 0
@@ -1175,7 +1179,7 @@ Transform:
   m_GameObject: {fileID: 540193940}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.5, y: -0.5, z: 0}
+  m_LocalPosition: {x: -2.61, y: -0.55, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1502,6 +1506,9 @@ GameObject:
   - component: {fileID: 824192033}
   - component: {fileID: 824192034}
   - component: {fileID: 824192035}
+  - component: {fileID: 824192037}
+  - component: {fileID: 824192036}
+  - component: {fileID: 824192038}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1577,7 +1584,7 @@ Transform:
   m_GameObject: {fileID: 824192022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -3.99, z: 0}
+  m_LocalPosition: {x: -6.07, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1794,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5585a5ef5151dc347aba219fc4a5c267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ac_PlayerController
+  baseMoveSpeed: 5
 --- !u!114 &824192035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1806,6 +1814,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faaf3190ced7044b9c882b23553389a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteAndColliderAutoFitter
+--- !u!114 &824192036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824192022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29ad765bf1abc94c8923544e9157bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TimeReversalManager
+  timeScale: 30
+  startHour: 18
+  targetHour: 6
+  currentDDay: 3
+  timeText: {fileID: 0}
+  dDayText: {fileID: 0}
+  warningPanel: {fileID: 0}
+  warningText: {fileID: 0}
+  playerGrowth: {fileID: 824192037}
+--- !u!114 &824192037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824192022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54602f72caaf0634ba77094203ab8a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerGrowthManager
+  currentStage: 2
+  childController: {fileID: 22100000, guid: 0aa255ff4599542429056a07a3aa1497, type: 2}
+  studentController: {fileID: 22100000, guid: a2f03db7fa9b93b45ba73ef061d98bf2, type: 2}
+  adultController: {fileID: 9100000, guid: 36ec1ad3dc50d35419c62aa7c53fbfb6, type: 2}
+--- !u!114 &824192038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 824192022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bad35de82e07d54f96a8c1388a2ae0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHeatPoint
+  adultOffsetY: 1.8
+  studentOffsetY: 1.8
+  childOffsetY: 1.8
+  crouchMultiplier: 0.5
 --- !u!1 &940657753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,8 +4048,8 @@ Transform:
   m_GameObject: {fileID: 2058169014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -5, z: 0}
-  m_LocalScale: {x: 35, y: 3, z: 1}
+  m_LocalPosition: {x: 6, y: -5.2923, z: 0}
+  m_LocalScale: {x: 35, y: 2.4153743, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1530702934}

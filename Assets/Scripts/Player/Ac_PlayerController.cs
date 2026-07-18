@@ -36,12 +36,16 @@ public class Ac_PlayerController : MonoBehaviour
             spriteRenderer.flipX = true;  // 왼쪽
         }
 
-        // 2. 실제 물리 이동 속도 계산 (X축 절댓값)
+        // 2. 실제 물리 이동 속도 계산
         float currentPhysicalSpeed = Mathf.Abs(rb.linearVelocity.x);
-        bool isMoving = currentPhysicalSpeed > 0.1f;
 
-        // 3. ★ 만들어두신 애니메이터 파라미터로 값 완벽 전달! ★
-        animator.SetFloat("isrunning", currentPhysicalSpeed);
+        // ★ [여기가 누락되었던 부분!] 키보드 입력과 물리 속도를 보정하여 animSpeedParameter 변수를 생성합니다.
+        float animSpeedParameter = Mathf.Abs(moveInput) > 0.01f ? Mathf.Max(currentPhysicalSpeed, baseMoveSpeed * Mathf.Abs(moveInput)) : 0f;
+
+        bool isMoving = animSpeedParameter > 0.1f;
+
+        // 3. 애니메이터 파라미터 전달
+        animator.SetFloat("isrunning", animSpeedParameter);
         animator.SetBool("isCrouching", playerInput.IsCrouch);
 
         if (playerMovement != null)
@@ -49,17 +53,20 @@ public class Ac_PlayerController : MonoBehaviour
             animator.SetBool("isGrounded", playerMovement.IsGrounded());
         }
 
-        // 4. 이동 속도 비례 애니메이션 재생 속도(speed) 동적 조절
+        // 4. ★ 웅크리기 상태에 따른 이동 속도 비례 애니메이션 재생 ★
         if (isMoving)
         {
-            // 기본 걷기 속도(5)일 때 딱 0.75배속이 되도록 비례식 계산
-            float targetAnimSpeed = (currentPhysicalSpeed / baseMoveSpeed) * 0.75f;
-            // 비정상적인 속도 방지 (최소 0.3배속 ~ 최대 2.0배속)
+            // 웅크리고 있다면 최고 기준 속도를 반토막(0.5f) 내서 계산합니다!
+            float maxReferenceSpeed = playerInput.IsCrouch ? baseMoveSpeed * 0.5f : baseMoveSpeed;
+
+            // (현재 속도 / 현재 상태의 최고 속도) * 0.75배속 기준값
+            float targetAnimSpeed = (animSpeedParameter / maxReferenceSpeed) * 0.75f;
+
             animator.speed = Mathf.Clamp(targetAnimSpeed, 0.3f, 2.0f);
         }
         else
         {
-            // 서서 대기(Idle) 또는 앉아서 대기(Crouch_Idle) 중일 때는 숨쉬기 모션 속도 고정
+            // 가만히 멈춰서 숨 쉴 때 (Idle / Crouch_Idle)
             animator.speed = 0.6f;
         }
     }
