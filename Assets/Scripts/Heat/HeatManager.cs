@@ -17,6 +17,14 @@ public class HeatManager : MonoBehaviour
     [Header("Time Settings (Test)")]
     [SerializeField] private TimeOfDay currentTime = TimeOfDay.Night;
 
+    /*
+     * =========================================================
+     * KunekuneAI.cs 연계 내용
+     * =========================================================
+     */
+    [Header("Kunekune Reference")]
+    [SerializeField] private KunekuneAI kunekuneAI;
+
     public int CurrentHeat { get; private set; }
 
     private HashSet<HeatArea> activeHeatAreas = new HashSet<HeatArea>();
@@ -72,6 +80,47 @@ public class HeatManager : MonoBehaviour
             CurrentHeat = Mathf.Min(CurrentHeat + intensity, maxHeat);
 
             Debug.Log($"[더위 증가] {CurrentHeat} / {maxHeat} (강도: {intensity})");
+
+            /*
+             * =========================================================
+             * KunekuneAI.cs 연계 내용
+             * =========================================================
+             * 더위 게이지가 다 차면 쿠네쿠네를 소환.
+             */
+            if (CurrentHeat >= maxHeat && kunekuneAI != null && !kunekuneAI.gameObject.activeInHierarchy)
+            {
+                // 쿠네쿠네가 변신할 수 있는 사물에 tag: KunekuneProp을 붙임.
+                // 태그가 붙은 사물을 배열로 묶음.
+                GameObject[] props = GameObject.FindGameObjectsWithTag("KunekuneProp");
+                GameObject closestProp = null;
+                float minDistance = Mathf.Infinity;
+
+                Transform playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+                foreach (GameObject prop in props)
+                {
+                    float distance = Vector2.Distance(playerTransform.position, prop.transform.position);
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestProp = prop;
+                    }
+                }
+
+                // 가장 가까운 사물의 위치에 쿠네쿠네를 소환.
+                if (closestProp != null)
+                {
+                    closestProp.SetActive(false);
+                    kunekuneAI.StartChaseFrom(closestProp.transform.position, closestProp);
+                }
+                // 없으면 플레이어의 위치에서 3칸 떨어진 곳에 소환.
+                else
+                {
+                    kunekuneAI.StartChaseFrom(new Vector2(playerTransform.position.x - 3f, playerTransform.position.y), null);
+                }
+                
+                Debug.Log("더위가 최대치에 달해 쿠네쿠네가 소환됩니다.");
+            }
         }
     }
 

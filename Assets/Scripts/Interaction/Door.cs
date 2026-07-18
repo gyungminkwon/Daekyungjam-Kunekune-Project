@@ -27,6 +27,18 @@ public class Door : MonoBehaviour, IInteractable
                 player.transform.position = targetPos.position;
             }
 
+            /* =========================================================
+             * KunekuneAI.cs 연계 내용
+             * =========================================================
+             * 플레이어가 문을 통해 다른 맵으로 이동 시 쿠네쿠네도 함께 쫓아옴.
+             */
+            KunekuneAI kunekune = Object.FindFirstObjectByType<KunekuneAI>();
+            if (kunekune != null && kunekune.gameObject.activeInHierarchy)
+            {
+                Vector2 kunekuneNewPos = new Vector2(targetPos.position.x, targetPos.position.y);
+                kunekune.TeleportWithDelay(kunekuneNewPos);
+            }
+
             Physics2D.SyncTransforms();
 
             Debug.Log($"[Teleport] {targetPos.name} (으)로 이동했습니다.");
