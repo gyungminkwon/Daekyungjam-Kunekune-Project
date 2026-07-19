@@ -1,43 +1,49 @@
 fileFormatVersion: 2
-guid: 53fd94e365ae1f24a90fbf9c74c9faa5
+guid: 334b75db2d2d64c4589ab222fe4688d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1743003091680136991
-    second: scarecrow_kunekune_0
+      213: -8486018437839647304
+    second: scarecrow_kunekune (3)_0
   - first:
-      213: -6600751129810893547
-    second: scarecrow_kunekune_1
+      213: 6262100530912556008
+    second: scarecrow_kunekune (3)_1
   - first:
-      213: -1026301942583194042
-    second: scarecrow_kunekune_2
+      213: -7153646465354154764
+    second: scarecrow_kunekune (3)_2
   - first:
-      213: 7149961546603576416
-    second: scarecrow_kunekune_3
+      213: -480912697955609739
+    second: scarecrow_kunekune (3)_3
   - first:
-      213: 5482002492116799302
-    second: scarecrow_kunekune_4
+      213: -4294293743144285766
+    second: scarecrow_kunekune (3)_4
   - first:
-      213: 7177719132994914500
-    second: scarecrow_kunekune_5
+      213: 5033613117187335641
+    second: scarecrow_kunekune (3)_5
   - first:
-      213: 7170035465255167951
-    second: scarecrow_kunekune_6
+      213: -3463227113330656192
+    second: scarecrow_kunekune (3)_6
   - first:
-      213: -7985779642801512059
-    second: scarecrow_kunekune_7
+      213: -5526644641374687404
+    second: scarecrow_kunekune (3)_7
   - first:
-      213: -8582318243993432632
-    second: scarecrow_kunekune_8
+      213: 5316033736481479204
+    second: scarecrow_kunekune (3)_8
   - first:
-      213: 7556115240267252872
-    second: scarecrow_kunekune_9
+      213: 6571944631227823082
+    second: scarecrow_kunekune (3)_9
   - first:
-      213: -4794102595088837338
-    second: scarecrow_kunekune_10
+      213: -4279524317077089716
+    second: scarecrow_kunekune (3)_10
   - first:
-      213: 1029123941088176597
-    second: scarecrow_kunekune_11
+      213: 7502667476891064038
+    second: scarecrow_kunekune (3)_11
+  - first:
+      213: 175022826098831376
+    second: scarecrow_kunekune (3)_12
+  - first:
+      213: -8875799867192825939
+    second: scarecrow_kunekune (3)_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,265 +139,309 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: scarecrow_kunekune_0
+      name: scarecrow_kunekune (3)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 38
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1f800ab314603810800000000000000
-      internalID: 1743003091680136991
+      spriteID: 8bd072f013b9b3a80800000000000000
+      internalID: -8486018437839647304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_1
+      name: scarecrow_kunekune (3)_1
       rect:
         serializedVersion: 2
         x: 36
         y: 0
-        width: 75
+        width: 38
         height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5150dd8d1db6564a0800000000000000
-      internalID: -6600751129810893547
+      spriteID: 8e3f3dc314377e650800000000000000
+      internalID: 6262100530912556008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_2
+      name: scarecrow_kunekune (3)_2
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 0
+        width: 38
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fc36dff07429bc90800000000000000
+      internalID: -7153646465354154764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scarecrow_kunekune (3)_3
       rect:
         serializedVersion: 2
         x: 112
         y: 0
         width: 36
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64e090022d7d1c1f0800000000000000
-      internalID: -1026301942583194042
+      spriteID: 573916ef2747359f0800000000000000
+      internalID: -480912697955609739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_3
+      name: scarecrow_kunekune (3)_4
       rect:
         serializedVersion: 2
         x: 150
         y: 0
         width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06c320ff424c93360800000000000000
-      internalID: 7149961546603576416
+      spriteID: ab9c3beb79a9764c0800000000000000
+      internalID: -4294293743144285766
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_4
+      name: scarecrow_kunekune (3)_5
       rect:
         serializedVersion: 2
         x: 187
         y: 0
         width: 34
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 64f8d60c83cf31c40800000000000000
-      internalID: 5482002492116799302
+      spriteID: 9d5a2baf57cfad540800000000000000
+      internalID: 5033613117187335641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_5
+      name: scarecrow_kunekune (3)_6
       rect:
         serializedVersion: 2
         x: 224
         y: 0
         width: 32
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c8cfa3b5816c9360800000000000000
-      internalID: 7177719132994914500
+      spriteID: 04cbc651a4520ffc0800000000000000
+      internalID: -3463227113330656192
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_6
+      name: scarecrow_kunekune (3)_7
       rect:
         serializedVersion: 2
         x: 261
         y: 0
         width: 33
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fc7ac756445118360800000000000000
-      internalID: 7170035465255167951
+      spriteID: 45fab07eaf96d43b0800000000000000
+      internalID: -5526644641374687404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_7
+      name: scarecrow_kunekune (3)_8
       rect:
         serializedVersion: 2
-        x: 297
+        x: 298
         y: 0
         width: 32
         height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5812540b9bfcc2190800000000000000
-      internalID: -7985779642801512059
+      spriteID: 42a98fc848856c940800000000000000
+      internalID: 5316033736481479204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_8
+      name: scarecrow_kunekune (3)_9
       rect:
         serializedVersion: 2
         x: 335
         y: 0
         width: 31
         height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8cdca65370b75e880800000000000000
-      internalID: -8582318243993432632
+      spriteID: ae3bedb82dc343b50800000000000000
+      internalID: 6571944631227823082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_9
+      name: scarecrow_kunekune (3)_10
       rect:
         serializedVersion: 2
         x: 373
         y: 0
         width: 24
         height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8848b0ae6c6bcd860800000000000000
-      internalID: 7556115240267252872
+      spriteID: c4259f8be431c94c0800000000000000
+      internalID: -4279524317077089716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_10
+      name: scarecrow_kunekune (3)_11
       rect:
         serializedVersion: 2
-        x: 410
+        x: 413
         y: 0
         width: 24
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 62593fa071de77db0800000000000000
-      internalID: -4794102595088837338
+      spriteID: 6e6d7f3c154de1860800000000000000
+      internalID: 7502667476891064038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: scarecrow_kunekune_11
+      name: scarecrow_kunekune (3)_12
       rect:
         serializedVersion: 2
-        x: 447
+        x: 449
         y: 0
-        width: 24
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d9296a95ce284e00800000000000000
-      internalID: 1029123941088176597
+      spriteID: 010b431455ecd6200800000000000000
+      internalID: 175022826098831376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scarecrow_kunekune (3)_13
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 0
+        width: 26
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da7238afb03d2d480800000000000000
+      internalID: -8875799867192825939
       vertices: []
       indices: 
       edges: []
@@ -400,7 +450,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 75399b0c9c77d3b4a9e3dc79f0febadc
     internalID: 0
     vertices: []
     indices: 
@@ -410,18 +460,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      scarecrow_kunekune_0: 1743003091680136991
-      scarecrow_kunekune_1: -6600751129810893547
-      scarecrow_kunekune_10: -4794102595088837338
-      scarecrow_kunekune_11: 1029123941088176597
-      scarecrow_kunekune_2: -1026301942583194042
-      scarecrow_kunekune_3: 7149961546603576416
-      scarecrow_kunekune_4: 5482002492116799302
-      scarecrow_kunekune_5: 7177719132994914500
-      scarecrow_kunekune_6: 7170035465255167951
-      scarecrow_kunekune_7: -7985779642801512059
-      scarecrow_kunekune_8: -8582318243993432632
-      scarecrow_kunekune_9: 7556115240267252872
+      scarecrow_kunekune (3)_0: -8486018437839647304
+      scarecrow_kunekune (3)_1: 6262100530912556008
+      scarecrow_kunekune (3)_10: -4279524317077089716
+      scarecrow_kunekune (3)_11: 7502667476891064038
+      scarecrow_kunekune (3)_12: 175022826098831376
+      scarecrow_kunekune (3)_13: -8875799867192825939
+      scarecrow_kunekune (3)_2: -7153646465354154764
+      scarecrow_kunekune (3)_3: -480912697955609739
+      scarecrow_kunekune (3)_4: -4294293743144285766
+      scarecrow_kunekune (3)_5: 5033613117187335641
+      scarecrow_kunekune (3)_6: -3463227113330656192
+      scarecrow_kunekune (3)_7: -5526644641374687404
+      scarecrow_kunekune (3)_8: 5316033736481479204
+      scarecrow_kunekune (3)_9: 6571944631227823082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
