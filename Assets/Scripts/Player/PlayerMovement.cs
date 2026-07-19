@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -38,24 +36,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (input == null) return;
+
+        // 점프 처리
         if (input.IsJump && IsGrounded() && !isExhausted)
         {
             Jump();
         }
 
-        if (input.IsCrouch)
-        {
-            transform.localScale = new Vector3(1f, 0.5f, 1f);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-
+        // 탈진 타이머 계산(사이즈 축소 제거)
         if (isExhausted)
         {
             exhaustionTimer -= Time.deltaTime;
-
             if (exhaustionTimer < 0f && !input.IsSprint)
             {
                 isExhausted = false;
@@ -65,10 +57,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        // 기본 속도 설정 (웅크리기 : 50% 감속)
+        if (input == null || rb == null) return;
+
+        // 1. 기본 이동 속도 설정 (웅크리기 : 50% 감속)
         float speed = input.IsCrouch ? moveSpeed * 0.5f : moveSpeed;
 
-        // 탈진 상태라면 속도를 추가로 감속
+        // 2. 탈진 상태라면 속도를 추가 감속
         if (isExhausted)
         {
             speed *= exhaustionSpeedMultiplier;
@@ -76,8 +70,10 @@ public class PlayerMovement : MonoBehaviour
 
         bool isMoving = Mathf.Abs(input.MoveInput) > 0.01f;
 
+        // 3. 스태미나 및 달리기(Sprint) 적용
         if (stamina != null)
         {
+            // 앉아있을 때는 달리기 불가 (!input.IsCrouch)
             bool canSprint = !input.IsCrouch && input.IsSprint && !isExhausted && isMoving;
             if (canSprint)
             {
@@ -93,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
+        // 4. 최종 속도 물리 적용
         rb.linearVelocity = new Vector2(speed * input.MoveInput, rb.linearVelocity.y);
     }
 
@@ -101,15 +98,16 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
-    private bool IsGrounded()
+    // 애니메이션 컨트롤러에서 호출할 수 있도록 public으로 개방
+    public bool IsGrounded()
     {
+        if (groundCheck == null) return false;
         return Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
     }
 
     private void OnDrawGizmosSelected()
     {
         if (groundCheck == null) return;
-
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
     }
