@@ -12,15 +12,24 @@ public class PlayerGrowthManager : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController studentController;
     [SerializeField] private RuntimeAnimatorController adultController;
 
+    [Header("2.5D Collider Settings")]
+    [Tooltip("발 바닥에서부터 콜라이더를 얼마나 띄울지 (2.5D 입체감 효과, 기본값: 0.2)")]
+    [SerializeField] private float bottomGap = 0.2f;
+
+    // ★ [핵심 변경] 나이대별 앉았을 때의 캡슐 콜라이더 높이(Size Y)를 직접 지정합니다!
+    [Header("Crouch Height Settings (앉기 콜라이더 높이)")]
+    [SerializeField] private float adultCrouchHeight = 2.0f;     // 성인 앉기 높이
+    [SerializeField] private float studentCrouchHeight = 1.5f;   // 학생 앉기 높이
+    [SerializeField] private float childCrouchHeight = 1.3125f;  // ★ 어린이 앉기 높이 (1.3125 고정!)
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private CapsuleCollider2D capsuleCollider;
     private PlayerInput playerInput;
 
-    // ★ [핵심 변수] 서 있을 때의 원래 콜라이더 크기와 중심을 기억해 둡니다.
-    private Vector2 originalSize;
-    private Vector2 originalOffset;
     private bool isCurrentlyCrouching = false;
+    private float currentStandingHeight = 3.0f;
+    private float currentStandingWidth = 0.9f;
 
     void Awake()
     {
@@ -39,14 +48,14 @@ public class PlayerGrowthManager : MonoBehaviour
     {
         if (playerInput == null || capsuleCollider == null) return;
 
-        //앉기 키(S)를 누르면 콜라이더를 반토막 내고, 떼면 원래대로 복구합니다!
+        // S키(앉기) 입력 상태가 변할 때마다 콜라이더 크기 조절 함수를 호출합니다.
         if (playerInput.IsCrouch && !isCurrentlyCrouching)
         {
-            ApplyCrouchCollider(true);
+            ApplyColliderSize(true);
         }
         else if (!playerInput.IsCrouch && isCurrentlyCrouching)
         {
-            ApplyCrouchCollider(false);
+            ApplyColliderSize(false);
         }
     }
 
@@ -61,7 +70,6 @@ public class PlayerGrowthManager : MonoBehaviour
                 SetGrowthStage(GrowthStage.Child);
                 break;
             case GrowthStage.Child:
-                Debug.Log("이미 가장 어린 시절(Child)입니다!");
                 break;
         }
     }
@@ -84,50 +92,65 @@ public class PlayerGrowthManager : MonoBehaviour
                 break;
         }
 
-        Invoke(nameof(AdjustColliderToSprite), 0.1f);
+        // 애니메이션 교체 후 0.1초 뒤에 바뀐 이미지 크기를 다시 읽어옵니다.
+        Invoke(nameof(RecalculateSpriteBounds), 0.1f);
     }
 
-    //Y축 1.5 오프셋 기준으로 머리가 안 튀어나오게 세팅
-    private void AdjustColliderToSprite()
+    private void RecalculateSpriteBounds()
     {
-        if (spriteRenderer == null || spriteRenderer.sprite == null || capsuleCollider == null) return;
+        if (spriteRenderer == null || spriteRenderer.sprite == null) return;
 
-        float spriteWidth = spriteRenderer.sprite.bounds.size.x;
-        float spriteHeight = spriteRenderer.sprite.bounds.size.y;
+        // 어려졌을 때 변한 실제 스프라이트의 너비(X)와 높이(Y)를 저장
+        currentStandingWidth = spriteRenderer.sprite.bounds.size.x;
+        currentStandingHeight = spriteRenderer.sprite.bounds.size.y;
 
-        //Offset Y를 1.5로 고정하고, 발 아랫부분을 제외한 2.5D 높이 계산
-        float fixedOffsetY = 1.5f;
-        float targetHeight = Mathf.Max((spriteHeight - fixedOffsetY) * 2f, 0.5f);
+        Debug.Log($"[스프라이트 갱신] {currentStage} - Width(X): {currentStandingWidth}, Height(Y): {currentStandingHeight}");
 
-        originalSize = new Vector2(spriteWidth, targetHeight);
-        originalOffset = new Vector2(0f, fixedOffsetY);
-
-        //웅크리고 있는 상태가 아닐 때만 즉시 적용
-        if (!isCurrentlyCrouching)
-        {
-            capsuleCollider.size = originalSize;
-            capsuleCollider.offset = originalOffset;
-        }
+        ApplyColliderSize(isCurrentlyCrouching);
     }
 
-    //앉기/일어서기에 따른 콜라이더 반토막 조절 함수
-    private void ApplyCrouchCollider(bool crouch)
+    // ★ [핵심 연산] 발바닥을 고정한 상태로 앉기 높이(1.3125 등)를 정확히 적용하는 함수
+    private void ApplyColliderSize(bool isCrouch)
     {
-        isCurrentlyCrouching = crouch;
+        if (capsuleCollider == null) return;
+        isCurrentlyCrouching = isCrouch;
 
-        if (crouch)
+        // 1. X축 크기: 어려질 때 얇아진 이미지 너비를 100% 그대로 반영!
+        float targetWidth = currentStandingWidth;
+        float targetHeight;
+
+        // 2. Y축 크기: 앉았을 때는 나이대별 지정 숫자(1.3125 등)를 딱 맞게 적용!
+        if (isCrouch)
         {
-            //높이를 딱 반토막(0.5배) 내고, 바닥에서 뜨지 않도록 중심(Offset)도 반으로 낮춥니다!
-            capsuleCollider.size = new Vector2(originalSize.x, originalSize.y * 0.5f);
-            capsuleCollider.offset = new Vector2(originalOffset.x, originalOffset.y * 0.5f);
-            Debug.Log("[콜라이더 반토막] 웅크리기 상태 적용");
+            switch (currentStage)
+            {
+                case GrowthStage.Adult:
+                    targetHeight = adultCrouchHeight;
+                    break;
+                case GrowthStage.Student:
+                    targetHeight = studentCrouchHeight;
+                    break;
+                case GrowthStage.Child:
+                    targetHeight = childCrouchHeight; // ★ 여기에서 1.3125가 정확하게 들어갑니다!
+                    break;
+                default:
+                    targetHeight = 1.3125f;
+                    break;
+            }
         }
         else
         {
-            //일어서면 원래 기억해둔 크기와 1.5 오프셋으로 복귀
-            capsuleCollider.size = originalSize;
-            capsuleCollider.offset = originalOffset;
-            Debug.Log("[콜라이더 복구] 서기 상태 적용");
+            // 서 있을 때는 스프라이트 원래 높이에서 발 띄움 간격(bottomGap)만 뺍니다.
+            targetHeight = currentStandingHeight - bottomGap;
         }
+
+        // 3. ★ [바닥 고정 공식] 중심(Offset.Y) = 바닥 띄움(0.2) + (높이 / 2)
+        // 높이가 1.3125가 되든 2가 되든, 발바닥 선은 0.1밀리미터도 움직이지 않고 완벽 고정됩니다!
+        float targetOffsetY = bottomGap + (targetHeight / 2f);
+
+        capsuleCollider.size = new Vector2(targetWidth, Mathf.Max(targetHeight, 0.5f));
+        capsuleCollider.offset = new Vector2(0f, targetOffsetY);
+
+        Debug.Log($"[{currentStage} 콜라이더 적용] 앉음: {isCrouch} / Size Y: {targetHeight:F4} / Offset Y: {targetOffsetY:F4}");
     }
 }

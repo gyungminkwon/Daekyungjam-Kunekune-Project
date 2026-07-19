@@ -575,10 +575,6 @@ MonoBehaviour:
   staminaGuage: {fileID: 1679916466}
   stamina: {fileID: 824192025}
   heatGuage: {fileID: 2037546732}
-  timeText: {fileID: 0}
-  dDayText: {fileID: 0}
-  warningPanel: {fileID: 0}
-  warningText: {fileID: 0}
 --- !u!4 &350997241
 Transform:
   m_ObjectHideFlags: 0
@@ -1497,7 +1493,6 @@ GameObject:
   - component: {fileID: 824192023}
   - component: {fileID: 824192030}
   - component: {fileID: 824192029}
-  - component: {fileID: 824192032}
   - component: {fileID: 824192028}
   - component: {fileID: 824192027}
   - component: {fileID: 824192026}
@@ -1584,7 +1579,7 @@ Transform:
   m_GameObject: {fileID: 824192022}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.07, y: -4.5, z: 0}
+  m_LocalPosition: {x: -5.63, y: -4.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1730,43 +1725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627953421a940dc4fa915003ecdce305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
---- !u!70 &824192032
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 824192022}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 2}
-  m_Direction: 0
 --- !u!95 &824192033
 Animator:
   serializedVersion: 7
@@ -1835,6 +1793,8 @@ MonoBehaviour:
   warningPanel: {fileID: 0}
   warningText: {fileID: 0}
   playerGrowth: {fileID: 824192037}
+  currentHourFloat: 0
+  isTimerRunning: 1
 --- !u!114 &824192037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1851,6 +1811,10 @@ MonoBehaviour:
   childController: {fileID: 22100000, guid: 0aa255ff4599542429056a07a3aa1497, type: 2}
   studentController: {fileID: 22100000, guid: a2f03db7fa9b93b45ba73ef061d98bf2, type: 2}
   adultController: {fileID: 9100000, guid: 36ec1ad3dc50d35419c62aa7c53fbfb6, type: 2}
+  bottomGap: 0.5
+  adultCrouchHeight: 2
+  studentCrouchHeight: 1.5
+  childCrouchHeight: 1.3125
 --- !u!114 &824192038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1863,9 +1827,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bad35de82e07d54f96a8c1388a2ae0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHeatPoint
-  adultOffsetY: 1.8
-  studentOffsetY: 1.8
-  childOffsetY: 1.8
+  adultOffsetY: 2.5
+  studentOffsetY: 2
+  childOffsetY: 1.7
   crouchMultiplier: 0.5
 --- !u!1 &940657753
 GameObject:
@@ -4048,7 +4012,7 @@ Transform:
   m_GameObject: {fileID: 2058169014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: -5.2923, z: 0}
+  m_LocalPosition: {x: 6, y: -5.26, z: 0}
   m_LocalScale: {x: 35, y: 2.4153743, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
