@@ -9,7 +9,7 @@ public class HeatManager : MonoBehaviour
     public enum TimeOfDay { Morning, Day, Night }
     
     [Header("Heat Limits")]
-    [SerializeField] private int maxHeat = 100;
+    [SerializeField] private float maxHeat = 100f;
 
     [Header("Interval Settings")]
     [SerializeField] private float interval = 1f;
@@ -25,10 +25,10 @@ public class HeatManager : MonoBehaviour
     [Header("Kunekune Reference")]
     [SerializeField] private KunekuneAI kunekuneAI;
 
-    public int CurrentHeat { get; private set; }
+    public float CurrentHeat { get; private set; }
 
     private HashSet<HeatArea> activeHeatAreas = new HashSet<HeatArea>();
-    private float heatupTimer = 0f;
+    // private float heatupTimer = 0f;
     private float cooldownTimer = 0f;
 
     void Awake()
@@ -47,6 +47,19 @@ public class HeatManager : MonoBehaviour
 
     void Update()
     {
+        // if (activeHeatAreas.Count > 0)
+        // {
+        //     HandleHeatUp();
+        // }
+        // else
+        // {
+        //     HandleCoolDown();
+        // }
+        if (cooldownTimer > 0f)
+        {
+            cooldownTimer -= Time.deltaTime;
+        }
+
         if (activeHeatAreas.Count > 0)
         {
             HandleHeatUp();
@@ -68,18 +81,24 @@ public class HeatManager : MonoBehaviour
     }
 
     private void HandleHeatUp()
-    {
-        heatupTimer -= Time.deltaTime;
+    {                     
+        // heatupTimer -= Time.deltaTime;
 
-        if (heatupTimer <= 0f)
-        {
-            heatupTimer = interval;
+        // if (heatupTimer <= 0f)
+        // {
+        //     heatupTimer = interval;
 
-            int intensity = currentTime == TimeOfDay.Morning ? 10 :
-                                    currentTime == TimeOfDay.Day ? 20 : 15;
-            CurrentHeat = Mathf.Min(CurrentHeat + intensity, maxHeat);
+        //     int intensity = currentTime == TimeOfDay.Morning ? 10 :
+        //                             currentTime == TimeOfDay.Day ? 20 : 15;
+        //     CurrentHeat = Mathf.Min(CurrentHeat + intensity, maxHeat);
 
-            Debug.Log($"[더위 증가] {CurrentHeat} / {maxHeat} (강도: {intensity})");
+        //     Debug.Log($"[더위 증가] {CurrentHeat} / {maxHeat} (강도: {intensity})");
+        // }
+
+        float intensity = currentTime == TimeOfDay.Morning ? 10f :
+                          currentTime == TimeOfDay.Day ? 20f : 15f;
+
+        CurrentHeat = Mathf.Min(CurrentHeat + (intensity * Time.deltaTime), maxHeat);
 
             /*
              * =========================================================
@@ -136,24 +155,28 @@ public class HeatManager : MonoBehaviour
                 }
                 
                 Debug.Log("더위가 최대치에 달해 쿠네쿠네가 소환됩니다.");
-            }
         }
     }
 
     private void HandleCoolDown()
     {
-        cooldownTimer -= Time.deltaTime;
-        if (cooldownTimer <= 0f)
-        {
-            cooldownTimer = interval;
+        // cooldownTimer -= Time.deltaTime;
+        // if (cooldownTimer <= 0f)
+        // {
+        //     cooldownTimer = interval;
 
-            int intensity = currentTime == TimeOfDay.Morning ? 7 :
-                            currentTime == TimeOfDay.Day ? 0 : 4;
+        //     int intensity = currentTime == TimeOfDay.Morning ? 7 :
+        //                     currentTime == TimeOfDay.Day ? 0 : 4;
             
-            CurrentHeat = Mathf.Max(CurrentHeat - intensity, 0);
+        //     CurrentHeat = Mathf.Max(CurrentHeat - intensity, 0);
 
-            Debug.Log($"[더위 감소] {CurrentHeat} / {maxHeat} ({intensity} 감소)");
-        }
+        //     Debug.Log($"[더위 감소] {CurrentHeat} / {maxHeat} ({intensity} 감소)");
+        // }
+
+        float intensity = currentTime == TimeOfDay.Morning ? 7f :
+                          currentTime == TimeOfDay.Day ? 0f : 4f;
+        
+        CurrentHeat = Mathf.Max(CurrentHeat - (intensity * Time.deltaTime), 0f);
     }
 
     public void SetTimeOfDay(TimeOfDay time)
@@ -163,12 +186,19 @@ public class HeatManager : MonoBehaviour
 
     public void HeatDown(int amount)
     {
-        if (cooldownTimer > 0) return;
+        // if (cooldownTimer > 0) return;
+
+        // cooldownTimer = interval;
+        // CurrentHeat -= amount;
+        // CurrentHeat = Mathf.Clamp(CurrentHeat, 0, maxHeat);
+        // Debug.Log($"더위가 조금씩 가신다... ({CurrentHeat} / {maxHeat})");
+
+        if (cooldownTimer > 0f) return;
 
         cooldownTimer = interval;
         CurrentHeat -= amount;
-        CurrentHeat = Mathf.Clamp(CurrentHeat, 0, maxHeat);
-        Debug.Log($"더위가 조금씩 가신다... ({CurrentHeat} / {maxHeat})");
+        CurrentHeat = Mathf.Clamp(CurrentHeat, 0f, maxHeat);
+        Debug.Log($"더위가 조금씩 가신다... ({CurrentHeat:F1} / {maxHeat})");
     }
 
     public float GetHeatRatio()

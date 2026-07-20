@@ -28,6 +28,9 @@ public class KunekuneAI : MonoBehaviour
     private float dashTimer = 0f;
     private GameObject hiddenProp;
     [HideInInspector] public bool isDashing = false;
+    private Coroutine currentTeleportCoroutine;
+    private bool isChasingDoor = false;
+    private Vector2 doorTargetPos;
 
     void Awake()
     {
@@ -70,12 +73,12 @@ public class KunekuneAI : MonoBehaviour
         currentAnimName = animName;
         currentSpawnDelay = delay > 0f ? delay : spawnDelay;
         
-        // Vector2 groundPos = GetGroundPosition(spawnPosition);
-        // transform.position = groundPos;
-        // startY = transform.position.y;
-
-        transform.position = spawnPosition;
+        Vector2 groundPos = GetGroundPosition(spawnPosition);
+        transform.position = groundPos;
         startY = transform.position.y;
+
+        // transform.position = spawnPosition;
+        // startY = transform.position.y;
         
         StartCoroutine(ChaseSequenceRoutine());
     }
@@ -114,31 +117,57 @@ public class KunekuneAI : MonoBehaviour
     }
 
     // Door.cs와 연계
-    public void TeleportWithDelay(Vector2 newPosition)
+    public void ChaseDoorAndTeleport(Vector2 doorPosition, Vector2 destinationPosition)
     {
-        StartCoroutine(TeleportDelayRoutine(newPosition));
+        if (currentTeleportCoroutine != null)
+        {
+            StopCoroutine(currentTeleportCoroutine);
+            currentTeleportCoroutine = null;
+        }
+
+        if (Vector2.Distance(transform.position, destinationPosition) < 15f)
+        {
+            isChasingDoor = false;
+            return;
+        }
+        
+        currentTeleportCoroutine = StartCoroutine(DoorChaseRoutine(doorPosition, destinationPosition));
     }
 
-    IEnumerator TeleportDelayRoutine(Vector2 newPosition)
+    IEnumerator DoorChaseRoutine(Vector2 doorPosition, Vector2 destinationPosition)
     {
-        // 플레이어가 맵을 이동하면 2초간 대기
-        yield return new WaitForSeconds(2f);
-        Vector2 groundPos = GetGroundPosition(newPosition);
+        isChasingDoor = true;
+        doorTargetPos = doorPosition;
 
-        // 이후 이동
+        float timeout = 2f;
+        float elapsed = 0f;
+
+        while (elapsed < timeout)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        isChasingDoor = false;
+        Vector2 groundPos = GetGroundPosition(destinationPosition);
+
         transform.position = groundPos;
         startY = transform.position.y;
         isDashing = false;
         dashTimer = 0f;
         anim.speed = walkSpeedMultiplier;
+
+        currentTeleportCoroutine = null;
     }
 
     void Update()
     {
         if (player == null) return;
 
+        float targetX = isChasingDoor ? doorTargetPos.x : player.position.x;
+
         // 방향 전환
-        if (player.position.x < transform.position.x)
+        if (targetX < transform.position.x)
         {
             spriteRenderer.flipX = true;
         }
@@ -149,7 +178,7 @@ public class KunekuneAI : MonoBehaviour
         
         if (!isChasing) return;
 
-        float direction = Mathf.Sign(player.position.x - transform.position.x);
+        float direction = Mathf.Sign(targetX - transform.position.x);
 
         dashTimer += Time.deltaTime;
         float currentSpeed = 0f;

@@ -35,7 +35,7 @@ public class Door : MonoBehaviour, IInteractable
             KunekuneAI kunekune = Object.FindFirstObjectByType<KunekuneAI>();
             if (kunekune != null && kunekune.gameObject.activeInHierarchy)
             {
-                kunekune.TeleportWithDelay(targetPos.position);
+                kunekune.ChaseDoorAndTeleport(transform.position, targetPos.position);
             }
 
             Physics2D.SyncTransforms();
