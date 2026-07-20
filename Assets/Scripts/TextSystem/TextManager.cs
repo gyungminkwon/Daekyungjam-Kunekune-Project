@@ -61,20 +61,8 @@ public class TextManager : MonoBehaviour
     {
         // 이동 조작 불가 처리
         playerInput.enabled = false;
-
-        SpriteRenderer sr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
-
-        Debug.Log("Pause 전 : " + sr.color.a);
-
         dialogPanel.SetActive(true);
-
         if (director != null) director.Pause();
-
-        Debug.Log("Pause 후 : " + sr.color.a);
-
-        yield return null;
-
-        Debug.Log("다음 프레임 :  : " + sr.color.a);
 
         if (data.type == TextType.Interaction && data.objectIcon != null)
         {
@@ -108,12 +96,9 @@ public class TextManager : MonoBehaviour
         }
 
         if (director != null) director.Play();
-
         dialogPanel.SetActive(false);
-        
         // 플레이어 이동 가능 처리 (약간의 딜레이 주기)
         yield return new WaitForSeconds(enableDelay);
-        
         playerInput.enabled = true;
     }
 
