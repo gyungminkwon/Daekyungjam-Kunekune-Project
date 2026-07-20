@@ -47,6 +47,7 @@ public class PlayerGrowthManager : MonoBehaviour
     void Update()
     {
         if (playerInput == null || capsuleCollider == null) return;
+        // SetGrowthStage(currentStage);
 
         // S키(앉기) 입력 상태가 변할 때마다 콜라이더 크기 조절 함수를 호출합니다.
         if (playerInput.IsCrouch && !isCurrentlyCrouching)
