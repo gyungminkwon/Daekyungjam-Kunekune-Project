@@ -17,6 +17,6 @@ public class TimelineTextTrigger : MonoBehaviour
 
     public void TriggerText(TextData textData)
     {
-        TextManager.Instance.PlayText(textData);
+        TextManager.Instance.PlayText(textData, director);
     }
 }

@@ -35,26 +35,18 @@ public class TextManager : MonoBehaviour
         playerInput = FindFirstObjectByType<PlayerInput>();
     }
 
-    public void PlayText(TextData data, PlayableDirector director = null)
+    public void PlayText(TextData data, PlayableDirector director = null, float enableDelay = 0f)
     {
-        StartCoroutine(TextRoutine(data, director));
+        StartCoroutine(TextRoutine(data, director, enableDelay));
     }
 
-    private IEnumerator TextRoutine(TextData data, PlayableDirector director)
+    private IEnumerator TextRoutine(TextData data, PlayableDirector director, float enableDelay)
     {
-        bool shouldPauseTimeline = (director != null) && 
-                                   (data.type == TextType.Monologue || data.type == TextType.Interaction);
-
-        if (shouldPauseTimeline)
-        {
-            director.Pause();
-        }
-
         switch (data.type)
         {
             case TextType.Monologue :
             case TextType.Interaction :
-                yield return StartCoroutine(HandleDialog(data));
+                yield return StartCoroutine(HandleDialog(data, director, enableDelay));
                 break;
             case TextType.ScreenFade :
                 yield return StartCoroutine(HandleScreenFade(data));
@@ -63,19 +55,26 @@ public class TextManager : MonoBehaviour
                 yield return StartCoroutine(HandleSystemGuide(data));
                 break;
         }
-
-        if (shouldPauseTimeline)
-        {
-            director.Play();
-        }
     }
 
-    private IEnumerator HandleDialog(TextData data)
+    private IEnumerator HandleDialog(TextData data, PlayableDirector director, float enableDelay)
     {
         // 이동 조작 불가 처리
         playerInput.enabled = false;
 
+        SpriteRenderer sr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+
+        Debug.Log("Pause 전 : " + sr.color.a);
+
         dialogPanel.SetActive(true);
+
+        if (director != null) director.Pause();
+
+        Debug.Log("Pause 후 : " + sr.color.a);
+
+        yield return null;
+
+        Debug.Log("다음 프레임 :  : " + sr.color.a);
 
         if (data.type == TextType.Interaction && data.objectIcon != null)
         {
@@ -108,9 +107,13 @@ public class TextManager : MonoBehaviour
             yield return null;
         }
 
+        if (director != null) director.Play();
+
         dialogPanel.SetActive(false);
         
-        // 플레이어 이동 가능 처리
+        // 플레이어 이동 가능 처리 (약간의 딜레이 주기)
+        yield return new WaitForSeconds(enableDelay);
+        
         playerInput.enabled = true;
     }
 
