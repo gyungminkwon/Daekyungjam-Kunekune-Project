@@ -1,43 +1,40 @@
 fileFormatVersion: 2
-guid: 508d83e537e16dc42b65849b1d925361
+guid: 09e10a6837b101b4fa09e916bd169d2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6307764154909330371
-    second: broomstick_kunekune_0
+      213: -4108077114606325719
+    second: broomstick_kunekune (1)_0
   - first:
-      213: 6513966400633965705
-    second: broomstick_kunekune_1
+      213: 3873600514251078352
+    second: broomstick_kunekune (1)_1
   - first:
-      213: -7421799014289163970
-    second: broomstick_kunekune_2
+      213: -7906258265208840355
+    second: broomstick_kunekune (1)_2
   - first:
-      213: 1297547998424027516
-    second: broomstick_kunekune_3
+      213: -7907241745908232694
+    second: broomstick_kunekune (1)_3
   - first:
-      213: 3643321390628268385
-    second: broomstick_kunekune_4
+      213: 8825120851419293881
+    second: broomstick_kunekune (1)_4
   - first:
-      213: 6530749055198093809
-    second: broomstick_kunekune_5
+      213: -4428492329572735654
+    second: broomstick_kunekune (1)_5
   - first:
-      213: 7131138774410856405
-    second: broomstick_kunekune_6
+      213: 8243123634302349742
+    second: broomstick_kunekune (1)_6
   - first:
-      213: -4263602678658192272
-    second: broomstick_kunekune_7
+      213: -8977287538177697989
+    second: broomstick_kunekune (1)_7
   - first:
-      213: 2309836561204901052
-    second: broomstick_kunekune_8
+      213: 29747122667723374
+    second: broomstick_kunekune (1)_8
   - first:
-      213: 8679965760923321751
-    second: broomstick_kunekune_9
+      213: 7185382832532374439
+    second: broomstick_kunekune (1)_9
   - first:
-      213: -9203648281756786236
-    second: broomstick_kunekune_10
-  - first:
-      213: 5841311421235123993
-    second: broomstick_kunekune_11
+      213: -9164430758804405097
+    second: broomstick_kunekune (1)_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,265 +130,243 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: broomstick_kunekune_0
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 62
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cb0054341ea98750800000000000000
-      internalID: 6307764154909330371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broomstick_kunekune_1
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 0
-        width: 22
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 98c0e9ccde1466a50800000000000000
-      internalID: 6513966400633965705
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broomstick_kunekune_2
-      rect:
-        serializedVersion: 2
-        x: 290
-        y: 0
-        width: 24
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3933fe6e19700990800000000000000
-      internalID: -7421799014289163970
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broomstick_kunekune_3
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 26
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c715515a701d10210800000000000000
-      internalID: 1297547998424027516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broomstick_kunekune_4
+      name: broomstick_kunekune (1)_0
       rect:
         serializedVersion: 2
         x: 9
         y: 0
         width: 12
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 169eafa608daf8230800000000000000
-      internalID: 3643321390628268385
+      spriteID: 9207af931ad2df6c0800000000000000
+      internalID: -4108077114606325719
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_5
+      name: broomstick_kunekune (1)_1
       rect:
         serializedVersion: 2
         x: 39
         y: 0
         width: 16
         height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f1ec401aa1e1aa50800000000000000
-      internalID: 6530749055198093809
+      spriteID: 0dab4bdf42bc1c530800000000000000
+      internalID: 3873600514251078352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_6
+      name: broomstick_kunekune (1)_2
       rect:
         serializedVersion: 2
         x: 70
         y: 0
         width: 19
         height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d706c4dee4e6f260800000000000000
-      internalID: 7131138774410856405
+      spriteID: d5f1bb73ff3574290800000000000000
+      internalID: -7906258265208840355
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_7
+      name: broomstick_kunekune (1)_3
       rect:
         serializedVersion: 2
         x: 102
         y: 0
         width: 17
         height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07cac2b04f3a4d4c0800000000000000
-      internalID: -4263602678658192272
+      spriteID: a0e0006c685d34290800000000000000
+      internalID: -7907241745908232694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_8
+      name: broomstick_kunekune (1)_4
       rect:
         serializedVersion: 2
         x: 132
         y: 0
         width: 21
         height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb4f3d74d103e0020800000000000000
-      internalID: 2309836561204901052
+      spriteID: 9b86db828a0297a70800000000000000
+      internalID: 8825120851419293881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_9
+      name: broomstick_kunekune (1)_5
       rect:
         serializedVersion: 2
         x: 164
         y: 0
         width: 21
         height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79543620fde657870800000000000000
-      internalID: 8679965760923321751
+      spriteID: a55664d70b5da82c0800000000000000
+      internalID: -4428492329572735654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_10
+      name: broomstick_kunekune (1)_6
       rect:
         serializedVersion: 2
         x: 195
         y: 0
         width: 20
         height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c1a04896a2164080800000000000000
-      internalID: -9203648281756786236
+      spriteID: ea1f73e7545756270800000000000000
+      internalID: 8243123634302349742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_11
+      name: broomstick_kunekune (1)_7
       rect:
         serializedVersion: 2
         x: 227
         y: 0
         width: 21
         height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 917d62df9c1801150800000000000000
-      internalID: 5841311421235123993
+      spriteID: b3790683c844a6380800000000000000
+      internalID: -8977287538177697989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broomstick_kunekune (1)_8
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 0
+        width: 22
+        height: 68
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6a13b7b9dea96000800000000000000
+      internalID: 29747122667723374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broomstick_kunekune (1)_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 0
+        width: 24
+        height: 73
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a3484ccd9b97b360800000000000000
+      internalID: 7185382832532374439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: broomstick_kunekune (1)_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 26
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 794ccc4b7c661d080800000000000000
+      internalID: -9164430758804405097
       vertices: []
       indices: 
       edges: []
@@ -400,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: adcc0998e01018b4394b9eee7069fdea
     internalID: 0
     vertices: []
     indices: 
@@ -410,18 +385,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      broomstick_kunekune_0: 6307764154909330371
-      broomstick_kunekune_1: 6513966400633965705
-      broomstick_kunekune_10: -9203648281756786236
-      broomstick_kunekune_11: 5841311421235123993
-      broomstick_kunekune_2: -7421799014289163970
-      broomstick_kunekune_3: 1297547998424027516
-      broomstick_kunekune_4: 3643321390628268385
-      broomstick_kunekune_5: 6530749055198093809
-      broomstick_kunekune_6: 7131138774410856405
-      broomstick_kunekune_7: -4263602678658192272
-      broomstick_kunekune_8: 2309836561204901052
-      broomstick_kunekune_9: 8679965760923321751
+      broomstick_kunekune (1)_0: -4108077114606325719
+      broomstick_kunekune (1)_1: 3873600514251078352
+      broomstick_kunekune (1)_10: -9164430758804405097
+      broomstick_kunekune (1)_2: -7906258265208840355
+      broomstick_kunekune (1)_3: -7907241745908232694
+      broomstick_kunekune (1)_4: 8825120851419293881
+      broomstick_kunekune (1)_5: -4428492329572735654
+      broomstick_kunekune (1)_6: 8243123634302349742
+      broomstick_kunekune (1)_7: -8977287538177697989
+      broomstick_kunekune (1)_8: 29747122667723374
+      broomstick_kunekune (1)_9: 7185382832532374439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
