@@ -126,6 +126,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -133,12 +146,12 @@ TextureImporter:
       name: pot_kunekune_0
       rect:
         serializedVersion: 2
-        x: 5
+        x: 6
         y: 0
-        width: 21
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 19
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -155,12 +168,12 @@ TextureImporter:
       name: pot_kunekune_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 36
         y: 0
-        width: 22
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 20
+        height: 42
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,12 +190,12 @@ TextureImporter:
       name: pot_kunekune_2
       rect:
         serializedVersion: 2
-        x: 66
+        x: 67
         y: 0
-        width: 23
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 21
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,12 +212,12 @@ TextureImporter:
       name: pot_kunekune_3
       rect:
         serializedVersion: 2
-        x: 99
+        x: 100
         y: 0
-        width: 22
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 20
+        height: 37
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,12 +234,12 @@ TextureImporter:
       name: pot_kunekune_4
       rect:
         serializedVersion: 2
-        x: 130
+        x: 131
         y: 0
-        width: 24
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 34
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,12 +256,12 @@ TextureImporter:
       name: pot_kunekune_5
       rect:
         serializedVersion: 2
-        x: 164
+        x: 165
         y: 0
-        width: 27
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 25
+        height: 35
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,12 +278,12 @@ TextureImporter:
       name: pot_kunekune_6
       rect:
         serializedVersion: 2
-        x: 192
+        x: 193
         y: 0
-        width: 26
-        height: 47
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,12 +300,12 @@ TextureImporter:
       name: pot_kunekune_7
       rect:
         serializedVersion: 2
-        x: 223
+        x: 224
         y: 0
-        width: 27
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 25
+        height: 63
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,12 +322,12 @@ TextureImporter:
       name: pot_kunekune_8
       rect:
         serializedVersion: 2
-        x: 255
+        x: 256
         y: 0
-        width: 26
-        height: 70
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,12 +344,12 @@ TextureImporter:
       name: pot_kunekune_9
       rect:
         serializedVersion: 2
-        x: 290
+        x: 291
         y: 0
-        width: 24
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 75
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,12 +366,12 @@ TextureImporter:
       name: pot_kunekune_10
       rect:
         serializedVersion: 2
-        x: 322
+        x: 323
         y: 0
-        width: 24
-        height: 76
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 75
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,7 +388,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b33fb73f7e505b64bb954e0d72067f42
     internalID: 0
     vertices: []
     indices: 
@@ -383,7 +396,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       pot_kunekune_0: -7803298610261674138
       pot_kunekune_1: 148276796649851657
