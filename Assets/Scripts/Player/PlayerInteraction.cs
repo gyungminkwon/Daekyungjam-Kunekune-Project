@@ -8,7 +8,6 @@ public class PlayerInteraction : MonoBehaviour
 
     private List<IInteractable> nearbyInteractables = new List<IInteractable>();
     private IInteractable currentTarget = null;
-    private InputAction interactAction;
 
     void Awake()
     {
@@ -19,19 +18,12 @@ public class PlayerInteraction : MonoBehaviour
     {
         UpdateCurrentTarget();
 
-        if (input == null) return;
+        // 웅크리기(Crouch) 중에는 상호작용 불가
+        if (input == null || currentTarget == null || input.IsCrouch) return;
 
-        // ★ [핵심 수정] input.IsCrouch가 'false'(서 있는 상태)일 때만 F키 상호작용을 허용합니다!
-        if (!input.IsCrouch && input.IsInteract && currentTarget != null)
-        {
-            Debug.Log("🔍 [상호작용 실행] 서 있는 상태에서 F키를 눌렀습니다.");
-            currentTarget.Interact();
-        }
-        else if (input.IsCrouch && input.IsInteract && currentTarget != null)
-        {
-            // (선택 사항) 앉아서 눌렀을 때 왜 안 되는지 플레이어에게 안내하고 싶다면 로그나 UI를 띄워주세요.
-            Debug.Log("[상호작용 불가] 앉은 상태에서는 상호작용(F키)을 할 수 없습니다!");
-        }
+        if (input.InteractPressed) currentTarget.OnInteractPressed();
+        if (input.InteractHeld) currentTarget.OnInteractHeld();
+        if (input.InteractReleased) currentTarget.OnInteractReleased();
     }
 
     private void UpdateCurrentTarget()

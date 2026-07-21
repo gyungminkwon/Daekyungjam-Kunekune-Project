@@ -2,6 +2,8 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public void Interact();
+    public void OnInteractPressed();
+    public void OnInteractHeld();
+    public void OnInteractReleased();
     public string GetInteractPrompt();
 }
