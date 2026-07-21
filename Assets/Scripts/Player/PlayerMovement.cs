@@ -20,9 +20,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float checkRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-    [Header("Jump Settings")]
-    [SerializeField] private float jumpForce = 20f;
-
     private Rigidbody2D rb;
     private PlayerInput input;
     private PlayerStamina stamina;
@@ -37,12 +34,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         if (input == null) return;
-
-        // 점프 처리
-        if (input.IsJump && IsGrounded() && !isExhausted)
-        {
-            Jump();
-        }
 
         // 탈진 타이머 계산(사이즈 축소 제거)
         if (isExhausted)
@@ -91,11 +82,6 @@ public class PlayerMovement : MonoBehaviour
 
         // 4. 최종 속도 물리 적용
         rb.linearVelocity = new Vector2(speed * input.MoveInput, rb.linearVelocity.y);
-    }
-
-    private void Jump()
-    {
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
     // 애니메이션 컨트롤러에서 호출할 수 있도록 public으로 개방

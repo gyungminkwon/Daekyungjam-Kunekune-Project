@@ -134,6 +134,22 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &-6167392163553340451
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalEmitter
+  m_Time: 12.75
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: d05ae8b42d61c6745910e70c6a798aef, type: 2}
 --- !u!114 &-6083190375852093586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -766,6 +782,7 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 671213267673627366}
     - {fileID: 5733059645551767644}
+    - {fileID: -6167392163553340451}
 --- !u!114 &4003098817300246368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -932,7 +949,7 @@ MonoBehaviour:
   m_Time: 5
   m_Retroactive: 0
   m_EmitOnce: 0
-  m_Asset: {fileID: 11400000, guid: 150b6906c3fcfff4b80ed822ae382e8e, type: 2}
+  m_Asset: {fileID: 11400000, guid: f804539c20dca9948b3033456546e694, type: 2}
 --- !u!114 &5668072194496398589
 MonoBehaviour:
   m_ObjectHideFlags: 1
