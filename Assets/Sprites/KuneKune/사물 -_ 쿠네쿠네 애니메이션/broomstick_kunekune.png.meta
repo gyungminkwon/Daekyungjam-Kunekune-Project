@@ -129,41 +129,32 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: broomstick_kunekune_0
+      name: broomstick_kunekune_8
       rect:
         serializedVersion: 2
-        x: 259
-        y: 62
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cb0054341ea98750800000000000000
-      internalID: 6307764154909330371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: broomstick_kunekune_1
-      rect:
-        serializedVersion: 2
-        x: 259
+        x: 260
         y: 0
-        width: 22
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 20
+        height: 67
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -177,15 +168,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_2
+      name: broomstick_kunekune_9
       rect:
         serializedVersion: 2
-        x: 290
+        x: 291
         y: 0
-        width: 24
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 72
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -199,15 +190,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_3
+      name: broomstick_kunekune_10
       rect:
         serializedVersion: 2
-        x: 320
+        x: 321
         y: 0
-        width: 26
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -221,15 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_4
+      name: broomstick_kunekune_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 10
         y: 0
-        width: 12
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 10
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -243,15 +234,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_5
+      name: broomstick_kunekune_1
       rect:
         serializedVersion: 2
-        x: 39
+        x: 40
         y: 0
-        width: 16
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 14
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -265,15 +256,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_6
+      name: broomstick_kunekune_2
       rect:
         serializedVersion: 2
-        x: 70
+        x: 71
         y: 0
-        width: 19
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 17
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -287,15 +278,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_7
+      name: broomstick_kunekune_3
       rect:
         serializedVersion: 2
-        x: 102
+        x: 103
         y: 0
-        width: 17
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 15
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -309,15 +300,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_8
+      name: broomstick_kunekune_4
       rect:
         serializedVersion: 2
-        x: 132
+        x: 133
         y: 0
-        width: 21
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 19
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -331,15 +322,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_9
+      name: broomstick_kunekune_5
       rect:
         serializedVersion: 2
-        x: 164
+        x: 165
         y: 0
-        width: 21
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 19
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -353,15 +344,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_10
+      name: broomstick_kunekune_6
       rect:
         serializedVersion: 2
-        x: 195
+        x: 196
         y: 0
-        width: 20
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 18
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -375,15 +366,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: broomstick_kunekune_11
+      name: broomstick_kunekune_7
       rect:
         serializedVersion: 2
-        x: 227
+        x: 228
         y: 0
-        width: 21
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 19
+        height: 56
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,7 +391,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a0ef660ddc8a11947ae42f663c03f36b
     internalID: 0
     vertices: []
     indices: 
@@ -408,20 +399,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      broomstick_kunekune_0: 6307764154909330371
-      broomstick_kunekune_1: 6513966400633965705
-      broomstick_kunekune_10: -9203648281756786236
-      broomstick_kunekune_11: 5841311421235123993
-      broomstick_kunekune_2: -7421799014289163970
-      broomstick_kunekune_3: 1297547998424027516
-      broomstick_kunekune_4: 3643321390628268385
-      broomstick_kunekune_5: 6530749055198093809
-      broomstick_kunekune_6: 7131138774410856405
-      broomstick_kunekune_7: -4263602678658192272
-      broomstick_kunekune_8: 2309836561204901052
-      broomstick_kunekune_9: 8679965760923321751
+      broomstick_kunekune_0: 3643321390628268385
+      broomstick_kunekune_1: 6530749055198093809
+      broomstick_kunekune_10: 1297547998424027516
+      broomstick_kunekune_2: 7131138774410856405
+      broomstick_kunekune_3: -4263602678658192272
+      broomstick_kunekune_4: 2309836561204901052
+      broomstick_kunekune_5: 8679965760923321751
+      broomstick_kunekune_6: -9203648281756786236
+      broomstick_kunekune_7: 5841311421235123993
+      broomstick_kunekune_8: 6513966400633965705
+      broomstick_kunekune_9: -7421799014289163970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

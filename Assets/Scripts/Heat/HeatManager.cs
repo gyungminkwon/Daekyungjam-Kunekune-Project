@@ -23,7 +23,7 @@ public class HeatManager : MonoBehaviour
      * =========================================================
      */
     [Header("Kunekune Reference")]
-    [SerializeField] private KunekuneAI kunekuneAI;
+    [SerializeField] private KunekuneAI kunekuneAI; // Kunekune 오브젝트를 배치해 주세요.
 
     public float CurrentHeat { get; private set; }
 

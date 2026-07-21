@@ -125,7 +125,7 @@ public class KunekuneAI : MonoBehaviour
             currentTeleportCoroutine = null;
         }
 
-        if (Vector2.Distance(transform.position, destinationPosition) < 15f)
+        if (Vector2.Distance(transform.position, destinationPosition) < 10f)
         {
             isChasingDoor = false;
             return;

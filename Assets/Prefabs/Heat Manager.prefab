@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HeatManager
   maxHeat: 100
-  interval: 2
+  interval: 1
   currentTime: 2
   kunekuneAI: {fileID: 0}
