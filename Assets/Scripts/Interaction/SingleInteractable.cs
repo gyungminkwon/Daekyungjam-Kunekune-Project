@@ -4,7 +4,7 @@ public class SingleInteractable : MonoBehaviour, IInteractable
 {
     public enum InteractType 
     { 
-        BedroomKey, Doll, ClassroomKey, Trowel, BusTicket, FuneralStand, BrokenPot
+        BedroomKey, Doll, ClassroomKey, Trowel, BusTicket, FuneralStand, BrokenPot, Mirror
     }
     
     public enum RequiredCondition { None, PotBroken }
