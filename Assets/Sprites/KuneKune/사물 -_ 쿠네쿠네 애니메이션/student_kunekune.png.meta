@@ -129,6 +129,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -136,12 +149,12 @@ TextureImporter:
       name: student_kunekune_0
       rect:
         serializedVersion: 2
-        x: 9
+        x: 10
         y: 0
-        width: 14
-        height: 40
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 12
+        height: 39
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -158,12 +171,12 @@ TextureImporter:
       name: student_kunekune_1
       rect:
         serializedVersion: 2
-        x: 36
+        x: 37
         y: 0
-        width: 21
-        height: 41
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 19
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -180,12 +193,12 @@ TextureImporter:
       name: student_kunekune_2
       rect:
         serializedVersion: 2
-        x: 68
+        x: 69
         y: 0
-        width: 23
-        height: 44
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 21
+        height: 43
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,12 +215,12 @@ TextureImporter:
       name: student_kunekune_3
       rect:
         serializedVersion: 2
-        x: 100
+        x: 101
         y: 0
-        width: 24
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 22
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -224,12 +237,12 @@ TextureImporter:
       name: student_kunekune_4
       rect:
         serializedVersion: 2
-        x: 128
+        x: 129
         y: 0
-        width: 28
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -246,12 +259,12 @@ TextureImporter:
       name: student_kunekune_5
       rect:
         serializedVersion: 2
-        x: 161
+        x: 162
         y: 0
-        width: 29
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 27
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -268,12 +281,12 @@ TextureImporter:
       name: student_kunekune_6
       rect:
         serializedVersion: 2
-        x: 195
+        x: 196
         y: 0
-        width: 29
-        height: 55
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 27
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -290,12 +303,12 @@ TextureImporter:
       name: student_kunekune_7
       rect:
         serializedVersion: 2
-        x: 226
+        x: 227
         y: 0
-        width: 28
-        height: 61
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 60
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -312,12 +325,12 @@ TextureImporter:
       name: student_kunekune_8
       rect:
         serializedVersion: 2
-        x: 256
+        x: 257
         y: 0
-        width: 28
-        height: 67
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 26
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -334,12 +347,12 @@ TextureImporter:
       name: student_kunekune_9
       rect:
         serializedVersion: 2
-        x: 288
+        x: 289
         y: 0
-        width: 26
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -356,12 +369,12 @@ TextureImporter:
       name: student_kunekune_10
       rect:
         serializedVersion: 2
-        x: 320
+        x: 321
         y: 0
-        width: 26
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -378,12 +391,12 @@ TextureImporter:
       name: student_kunekune_11
       rect:
         serializedVersion: 2
-        x: 352
+        x: 353
         y: 0
-        width: 26
-        height: 79
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 24
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -400,7 +413,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a1c1bdc5000346a42bf0ea9792576cbb
     internalID: 0
     vertices: []
     indices: 
@@ -408,7 +421,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       student_kunekune_0: -1411865686219342967
       student_kunekune_1: -476405258340247207
