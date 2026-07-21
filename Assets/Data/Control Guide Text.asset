@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2e626d5631f5d42bdea3ab88738303, type: 3}
+  m_Name: Control Guide Text
+  m_EditorClassIdentifier: Assembly-CSharp::TextData
+  type: 3
+  lines:
+  - "A/D : \uC88C/\uC6B0 \uC774\uB3D9  \nS : \uC6C5\uD06C\uB9AC\uAE30 / L-Shift :
+    \uB2EC\uB9AC\uAE30"
+  objectIcon: {fileID: 0}
+  displayDuration: 5

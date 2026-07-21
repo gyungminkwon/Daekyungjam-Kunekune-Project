@@ -7,7 +7,6 @@ public class PlayerInput : MonoBehaviour
     public PlayerInputAction Action { get; private set; }
     public float MoveInput => Action.Player.Move.ReadValue<float>();
     public bool IsSprint => Action.Player.Sprint.IsPressed();
-    public bool IsJump => Action.Player.Jump.WasPressedThisFrame();
     public bool IsCrouch => Action.Player.Crouch.IsPressed();
     public bool IsInteract => Action.Player.Interact.WasPressedThisFrame();
 
