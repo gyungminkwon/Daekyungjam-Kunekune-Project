@@ -29,15 +29,12 @@ public class Door : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if (targetPos == null)
-        {
-            Debug.Log($"{gameObject.name}: 목적지가 지정되지 않았습니다.");
-            return;
-        }
+        if (targetPos == null) return;
 
-        if (GameManager.Instance.currentStage != unlockStage && lockedMonologue != null)
+        // 초반에 가지 못하는 곳 등 권한 제어
+        if (GameManager.Instance.currentStage < unlockStage)
         {
-            TextManager.Instance.PlayText(lockedMonologue);
+            if (lockedMonologue != null) TextManager.Instance.PlayText(lockedMonologue);
             return;
         }
 
@@ -46,8 +43,10 @@ public class Door : MonoBehaviour, IInteractable
 
     private IEnumerator InteractRoutine()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (openedSprite != null) sr.sprite = openedSprite;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerInput playerInput = player.GetComponent<PlayerInput>();
+        playerInput.enabled = false;
 
         yield return new WaitForSeconds(0.3f);
 
@@ -55,6 +54,7 @@ public class Door : MonoBehaviour, IInteractable
 
         yield return new WaitForSeconds(0.5f);
 
+        
         if (player != null)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
@@ -73,6 +73,7 @@ public class Door : MonoBehaviour, IInteractable
 
             Debug.Log($"[Teleport] {targetPos.name} (으)로 이동했습니다.");
         }
+        playerInput.enabled = true;
 
         if (closedSprite != null) sr.sprite = closedSprite;
     }

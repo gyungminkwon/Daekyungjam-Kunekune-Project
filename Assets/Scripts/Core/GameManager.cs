@@ -16,7 +16,8 @@ public enum Stage
 {
     House,
     School,
-    RiceField
+    RiceField,
+    Locked
 }
 
 public class GameManager : MonoBehaviour
