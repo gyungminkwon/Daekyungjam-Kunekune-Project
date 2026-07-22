@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using NUnit.Framework;
 
-public class BlinkImage : MonoBehaviour
+public class BlinkText : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     private bool isBlinking = false;
