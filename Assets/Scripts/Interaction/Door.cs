@@ -79,13 +79,13 @@ public class Door : MonoBehaviour, IInteractable
         PlayerInput playerInput = player.GetComponent<PlayerInput>();
         playerInput.enabled = false;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
         // 페이드 아웃/인
+        UIManager.Instance?.FadeUI(0, 1, 0.3f);
+        // 카메라 이동 기다리기
+        yield return new WaitForSeconds(0.3f);
 
-        yield return new WaitForSeconds(0.5f);
-
-        
         if (player != null)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
@@ -100,12 +100,16 @@ public class Door : MonoBehaviour, IInteractable
                 player.transform.position = targetPos.position;
             }
 
+            yield return new WaitForSeconds(1f);
+
+            UIManager.Instance?.FadeUI(1, 0, 0.3f);
+
             /* =========================================================
              * KunekuneAI.cs 연계 내용
              * =========================================================
              * 플레이어가 문을 통해 다른 맵으로 이동 시 쿠네쿠네도 함께 쫓아옴.
              */
-            KunekuneAI kunekune = Object.FindFirstObjectByType<KunekuneAI>();
+            KunekuneAI kunekune = FindFirstObjectByType<KunekuneAI>();
             if (kunekune != null && kunekune.gameObject.activeInHierarchy)
             {
                 kunekune.ChaseDoorAndTeleport(transform.position, targetPos.position);

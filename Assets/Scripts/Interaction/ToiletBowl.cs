@@ -13,7 +13,7 @@ public class ToiletBowlInteractable : MonoBehaviour, IInteractable
 
         if (isEventBowl)
         {
-            GameProgressManager.Instance.hasClassroomKey = true;
+            ProgressManager.Instance?.SetFlag(ProgressFlag.HasClassroomKey, true);
             isKeyObtained = true;
             Debug.Log("교실 열쇠 획득");
             if (successMonologue != null) TextManager.Instance.PlayText(successMonologue);

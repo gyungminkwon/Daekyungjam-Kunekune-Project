@@ -11,7 +11,7 @@ public class ConditionDoor : MonoBehaviour, IInteractable
     public RequiredItem requiredItem;
     
     [Header("Unlock Restrictions")]
-    [SerializeField] private Stage unlockStage;
+    [SerializeField] private Date unlockStage;
     [SerializeField] private TextData lockedMonologue;
 
     [Header("Sprites")]
@@ -35,7 +35,7 @@ public class ConditionDoor : MonoBehaviour, IInteractable
 
     public void OnInteractPressed()
     {
-        if (GameManager.Instance.currentStage < unlockStage)
+        if (GameManager.Instance.currentDate < unlockStage)
         {
             if (lockedMonologue != null) TextManager.Instance.PlayText(lockedMonologue);
             else Debug.Log("잠김");

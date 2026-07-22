@@ -1,5 +1,6 @@
 using System.Collections;
 using Unity.Cinemachine;
+using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -8,6 +9,7 @@ public class IntroCutscene : MonoBehaviour
     [Header("Cinemachine & Offset Setting")]
     [SerializeField] private CinemachineCamera curCam;
     [SerializeField] private CinemachineCamera nextCam;
+    [SerializeField] private CanvasGroup ui;
 
     void Start()
     {
@@ -21,7 +23,7 @@ public class IntroCutscene : MonoBehaviour
         curCam.Priority = 0;
     }
 
-    public void ShowPlayer(float duration)
+    public void PlayerPadeIn(float duration)
     {
         StartCoroutine(PadePlayer(duration));
     }
@@ -29,6 +31,8 @@ public class IntroCutscene : MonoBehaviour
     private IEnumerator PadePlayer(float duration)
     {
         SpriteRenderer playerSr = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
+        if (playerSr == null) yield break;;
+
         Color c = playerSr.color;
 
         float timer = 0f;
@@ -44,5 +48,26 @@ public class IntroCutscene : MonoBehaviour
         }
         c.a = 1;
         playerSr.color = c;
+    }
+
+    public void FadeUI(float duration)
+    {
+        if (ui != null) StartCoroutine(FadeUIRoutine(duration));
+    }
+
+    private IEnumerator FadeUIRoutine(float duration)
+    {
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            ui.alpha = Mathf.Lerp(0, 1, timer / duration);
+
+            yield return null;
+        }
+
+        ui.alpha = 1;
     }
 }

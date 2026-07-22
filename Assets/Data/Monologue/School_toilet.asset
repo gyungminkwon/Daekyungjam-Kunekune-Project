@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc2e626d5631f5d42bdea3ab88738303, type: 3}
-  m_Name: House_doll
+  m_Name: School_toilet
   m_EditorClassIdentifier: Assembly-CSharp::TextData
-  type: 1
+  type: 0
   lines:
-  - "7\uC6D4 24\uC77C."
-  - "\uC5B4\uB9B4\uB54C \uC18C\uAFC9\uCE5C\uAD6C\uC5D0\uAC8C \uC0DD\uC77C\uC120\uBB3C\uB85C
-    \uBC1B\uC740 \uC778\uD615\uC774\uB2E4."
-  objectIcon: {fileID: 1511849832365779204, guid: c3546aa2b41a46047b5876ca6b772286, type: 3}
-  displayDuration: 5
+  - "\uC6B0\uC720\uB97C \uB354 \uBA39\uACE0 \uC2F6\uC9C0 \uC54A\uC544......"
+  objectIcon: {fileID: 0}
+  displayDuration: 2

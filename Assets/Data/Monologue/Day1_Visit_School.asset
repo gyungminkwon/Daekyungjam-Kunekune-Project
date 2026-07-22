@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Day1_Visit_School
   m_EditorClassIdentifier: Assembly-CSharp::TextData
   type: 0
-  lines: []
+  lines:
+  - "\uC5EC\uAE30\uC5D0 \uC88B\uC740 \uCD94\uC5B5\uC740 \uC5C6\uB294 \uAC83 \uAC19\uB2E4."
   objectIcon: {fileID: 0}
   displayDuration: 2

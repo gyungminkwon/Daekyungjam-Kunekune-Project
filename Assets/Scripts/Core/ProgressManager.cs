@@ -10,13 +10,18 @@ public enum ProgressFlag
     Has_Doll,
     HasClassroomKey,
     HasTrowel,
-    HasBusTicket
+    HasBusTicket,
+
+    FirstVisit_House,
+    FirstVisit_School
 }
 public class ProgressManager : MonoBehaviour
 {
     public static ProgressManager Instance { get; private set; }
 
     public event Action<ProgressFlag, bool> OnFlagChanged;
+    
+    public int toiletOpenedCount = 0;
 
     private Dictionary<ProgressFlag, bool> flags = new Dictionary<ProgressFlag, bool>();
 
