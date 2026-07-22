@@ -27,6 +27,8 @@ public class Door : MonoBehaviour, IInteractable
     void Start()
     {
         if (closedSprite != null) sr.sprite = closedSprite;
+
+        if (ProgressManager.Instance) ProgressManager.Instance.OnFlagChanged += HandleFlagChanged;
     }
 
     void OnEnable()

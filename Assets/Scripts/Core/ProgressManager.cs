@@ -34,7 +34,7 @@ public class ProgressManager : MonoBehaviour
     public void SetFlag(ProgressFlag flagID, bool value)
     {
         flags[flagID] = value;
-
+        Debug.Log($"{flagID} : {value}");
         OnFlagChanged?.Invoke(flagID, value);
     }
 
