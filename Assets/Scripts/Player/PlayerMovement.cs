@@ -97,4 +97,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(groundCheck.position, checkRadius);
     }
+
+    // Ac_PlayerController에서 탈진 여부를 확인할 수 있도록 열어줌
+    public bool IsExhausted => isExhausted;
 }

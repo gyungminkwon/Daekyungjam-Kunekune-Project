@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class KeyItem : MonoBehaviour, IInteractable
-{   
+{
     [SerializeField] private ProgressFlag flag;
     [SerializeField] private Image holdGuage;
     [SerializeField] private float threshold = 3f;  // 획득을 위해 F키를 홀드해야 하는 시간
@@ -33,7 +33,7 @@ public class KeyItem : MonoBehaviour, IInteractable
         if (holdTimer >= threshold)
         {
             Collect();
-        } 
+        }
     }
 
     public void Collect()

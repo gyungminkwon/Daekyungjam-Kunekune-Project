@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - KunekuneProp
+  - Inside
+  - Outside
   layers:
   - Default
   - TransparentFX
