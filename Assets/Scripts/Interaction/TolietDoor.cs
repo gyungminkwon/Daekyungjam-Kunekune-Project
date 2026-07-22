@@ -23,7 +23,7 @@ public class ToiletDoor : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (isOpened) return;
 
@@ -32,9 +32,9 @@ public class ToiletDoor : MonoBehaviour, IInteractable
         
         if (innerBowlCollider != null) innerBowlCollider.enabled = true;
         
-        GameProgressManager.Instance.toiletOpenedCount++;
+        ProgressManager.Instance.toiletOpenedCount++;
 
-        if (GameProgressManager.Instance.toiletOpenedCount == 4)
+        if (ProgressManager.Instance.toiletOpenedCount == 4)
         {
             // TODO: 쿠네쿠네 빼꼼
 
@@ -44,6 +44,9 @@ public class ToiletDoor : MonoBehaviour, IInteractable
             }
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     public string GetInteractPrompt()
     {

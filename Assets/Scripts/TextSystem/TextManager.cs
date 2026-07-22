@@ -3,10 +3,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Playables;
+using System.Runtime.CompilerServices;
+using NUnit.Framework.Constraints;
 
 public class TextManager : MonoBehaviour
 {
     public static TextManager Instance { get; private set; }
+
+    private enum DialogState
+    {
+        Typing,
+        WaitingForNext
+    }
+
+    private DialogState dialogState;
 
     [Header("UI References")]
     public GameObject dialogPanel;
@@ -18,9 +28,6 @@ public class TextManager : MonoBehaviour
 
     public CanvasGroup systemPanel;
     public TextMeshProUGUI systemText;
-
-    private bool isWaitingForClick = false;
-
     private PlayerInput playerInput;
 
     private void Awake()
@@ -76,37 +83,72 @@ public class TextManager : MonoBehaviour
 
         foreach (string line in data.lines)
         {
-            dialogText.text = line;
-            dialogText.maxVisibleCharacters = 0;
-
-            for (int i = 0; i <= line.Length; i++)
-            {
-                dialogText.maxVisibleCharacters = i;
-                yield return new WaitForSeconds(0.05f);
-            }
-
-            isWaitingForClick = true;
-            while (!Input.GetMouseButtonDown(0))
-            {
-                yield return null;
-            }
-            isWaitingForClick = false;
-
-            yield return null;
+            yield return ShowLine(line);
         }
 
         if (director != null) director.Play();
         dialogPanel.SetActive(false);
         // 플레이어 이동 가능 처리 (약간의 딜레이 주기)
         yield return new WaitForSeconds(enableDelay);
-        playerInput.enabled = true;
+        if (GameManager.Instance?.currentState != GameState.IntroCutscene)
+            playerInput.enabled = true;
     }
 
     private IEnumerator HandleScreenFade(TextData data)
     {
         // 페이드 인 -> 텍스트 출력 -> 대기 -> 페이드 아웃 (세부 코루틴 구현)
         // CanvasGroup.alpha를 Mathf.MoveTowards 등을 이용해 0에서 1로 조절
-        yield return null;
+        yield return FadeCanvasGroup(fadePanel, 0, 1, 0.3f);
+
+        fadeText.text = data.lines[0];
+
+        yield return new WaitForSeconds(data.displayDuration);
+
+        yield return FadeCanvasGroup(fadePanel, 1, 0, 0.3f); 
+    }
+
+    private IEnumerator ShowLine(string line)
+    {
+        dialogState = DialogState.Typing;
+
+        yield return TypeLine(line);
+
+        yield return new WaitForSeconds(0.2f);
+
+        dialogState = DialogState.WaitingForNext;
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+    }
+
+    private IEnumerator TypeLine(string line)
+    {
+        dialogText.text = line;
+        dialogText.maxVisibleCharacters = 0;
+
+        int visible = 0;
+        float timer = 0f;
+
+        while (visible < line.Length)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                dialogText.maxVisibleCharacters = line.Length;
+                yield break;
+            }
+
+            timer += Time.deltaTime;
+
+            if (timer >= 0.05f)
+            {
+                timer = 0f;
+                visible++;
+                dialogText.maxVisibleCharacters = visible;
+            }
+
+            yield return null;
+        }
     }
 
     private IEnumerator HandleSystemGuide(TextData data)

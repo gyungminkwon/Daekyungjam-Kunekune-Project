@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -12,11 +10,11 @@ public enum GameState
     GameClear
 }
 
-public enum Stage
+public enum Date
 {
-    House,
-    School,
-    RiceField,
+    Day1,
+    Day2,
+    Day3,
     Locked
 }
 
@@ -26,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game States")] 
     public GameState currentState = GameState.Title;
-    public Stage currentStage = Stage.House;
+    public Date currentDate = Date.Day1;
 
     [Header("Intro & UI References")]
     public GameObject titleBannerUI;
@@ -36,8 +34,6 @@ public class GameManager : MonoBehaviour
     [Header("Player References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerInput playerInputScript;
-
-    // [Header("System References")]
 
     void Awake()
     {
@@ -70,6 +66,8 @@ public class GameManager : MonoBehaviour
         Color c = playerSr.color;
         c.a = 0f;
         playerSr.color = c;
+
+        playerObject.GetComponent<PlayerInput>().enabled = false;
     }
 
     private void StartIntroCutscene()
@@ -90,15 +88,15 @@ public class GameManager : MonoBehaviour
     private void StartGameplay()
     {
         currentState = GameState.Playing;
-        currentStage = Stage.House;
+        currentDate = Date.Day1;
 
         if (playerInputScript != null) playerInputScript.enabled = true;
 
-        Debug.Log("인트로 종료. Stage-House 시작");
+        Debug.Log("인트로 종료");
     }
 
-    public void ChangeStage(Stage nextStage)
+    public void ChangeStage(Date nextDate)
     {
-        currentStage = nextStage;
+        currentDate = nextDate;
     }
 }

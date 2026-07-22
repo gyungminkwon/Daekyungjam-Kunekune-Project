@@ -4,7 +4,9 @@ using UnityEngine;
 public class Door : MonoBehaviour, IInteractable
 {
     [Header("Unlock & Link Settings")]
-    [SerializeField] private Stage unlockStage;
+    [SerializeField] private ProgressFlag requiredFlagID;
+    [SerializeField] private bool isLocked = false;
+
     [SerializeField] private Transform targetPos;
     
     [Header("Sprite Settings")]
@@ -27,12 +29,38 @@ public class Door : MonoBehaviour, IInteractable
         if (closedSprite != null) sr.sprite = closedSprite;
     }
 
+    void OnEnable()
+    {
+        if (ProgressManager.Instance != null) ProgressManager.Instance.OnFlagChanged += HandleFlagChanged;
+    }
+
+    void OnDisable()
+    {
+        if (ProgressManager.Instance != null) ProgressManager.Instance.OnFlagChanged -= HandleFlagChanged;
+    }
+
+    private void HandleFlagChanged(ProgressFlag flagID, bool value)
+    {
+        if (flagID == requiredFlagID && value)
+        {
+            UnlockDoor();
+        }
+    }
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
+        Debug.Log($"{gameObject.name} 잠금 해제");
+
+        // 필요한 경우, 여기에 연출 추가
+    }
+
     public void OnInteractPressed()
     {
         if (targetPos == null) return;
 
         // 초반에 가지 못하는 곳 등 권한 제어
-        if (GameManager.Instance.currentStage < unlockStage)
+        if (isLocked)
         {
             if (lockedMonologue != null) TextManager.Instance.PlayText(lockedMonologue);
             return;
@@ -51,13 +79,13 @@ public class Door : MonoBehaviour, IInteractable
         PlayerInput playerInput = player.GetComponent<PlayerInput>();
         playerInput.enabled = false;
 
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.2f);
 
         // 페이드 아웃/인
+        UIManager.Instance?.FadeUI(0, 1, 0.3f);
+        // 카메라 이동 기다리기
+        yield return new WaitForSeconds(0.3f);
 
-        yield return new WaitForSeconds(0.5f);
-
-        
         if (player != null)
         {
             Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
@@ -72,12 +100,16 @@ public class Door : MonoBehaviour, IInteractable
                 player.transform.position = targetPos.position;
             }
 
+            yield return new WaitForSeconds(1f);
+
+            UIManager.Instance?.FadeUI(1, 0, 0.3f);
+
             /* =========================================================
              * KunekuneAI.cs 연계 내용
              * =========================================================
              * 플레이어가 문을 통해 다른 맵으로 이동 시 쿠네쿠네도 함께 쫓아옴.
              */
-            KunekuneAI kunekune = Object.FindFirstObjectByType<KunekuneAI>();
+            KunekuneAI kunekune = FindFirstObjectByType<KunekuneAI>();
             if (kunekune != null && kunekune.gameObject.activeInHierarchy)
             {
                 kunekune.ChaseDoorAndTeleport(transform.position, targetPos.position);

@@ -11,7 +11,7 @@ public class ConditionDoor : MonoBehaviour, IInteractable
     public RequiredItem requiredItem;
     
     [Header("Unlock Restrictions")]
-    [SerializeField] private Stage unlockStage;
+    [SerializeField] private Date unlockStage;
     [SerializeField] private TextData lockedMonologue;
 
     [Header("Sprites")]
@@ -33,9 +33,9 @@ public class ConditionDoor : MonoBehaviour, IInteractable
         if (closedSprite != null) sr.sprite = closedSprite;
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
-        if (GameManager.Instance.currentStage < unlockStage)
+        if (GameManager.Instance.currentDate < unlockStage)
         {
             if (lockedMonologue != null) TextManager.Instance.PlayText(lockedMonologue);
             else Debug.Log("잠김");
@@ -70,6 +70,9 @@ public class ConditionDoor : MonoBehaviour, IInteractable
             Debug.Log($"{doorName} 잠김");
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     private IEnumerator EnterDoorRoutine()
     {

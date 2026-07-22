@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dc2e626d5631f5d42bdea3ab88738303, type: 3}
-  m_Name: Intro Monologue
+  m_Name: House_doll
   m_EditorClassIdentifier: Assembly-CSharp::TextData
-  type: 0
+  type: 1
   lines:
-  - ...
-  - "\uC774 \uC9C0\uC625\uAC19\uC740 \uACF3\uC5D0 \uB2E4\uC2DC \uC624\uB2E4\uB2C8......"
-  objectIcon: {fileID: 0}
-  displayDuration: 2
+  - "7\uC6D4 24\uC77C."
+  - "\uC5B4\uB9B4\uB54C \uC18C\uAFC9\uCE5C\uAD6C\uC5D0\uAC8C \uC0DD\uC77C\uC120\uBB3C\uB85C
+    \uBC1B\uC740 \uC778\uD615\uC774\uB2E4."
+  objectIcon: {fileID: 1511849832365779204, guid: c3546aa2b41a46047b5876ca6b772286, type: 3}
+  displayDuration: 5

@@ -32,7 +32,7 @@ public class SingleInteractable : MonoBehaviour, IInteractable
         sr = GetComponent<SpriteRenderer>();
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (isTriggered) return;
 
@@ -78,6 +78,9 @@ public class SingleInteractable : MonoBehaviour, IInteractable
         isTriggered = true;
     }
 
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
+    
     public string GetInteractPrompt()
     {
         if (isTriggered) return "";

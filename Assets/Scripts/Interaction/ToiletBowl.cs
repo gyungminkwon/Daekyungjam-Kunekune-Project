@@ -7,13 +7,13 @@ public class ToiletBowlInteractable : MonoBehaviour, IInteractable
     public TextData failMonologue;
     public TextData successMonologue;
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (isKeyObtained) return;
 
         if (isEventBowl)
         {
-            GameProgressManager.Instance.hasClassroomKey = true;
+            ProgressManager.Instance?.SetFlag(ProgressFlag.HasClassroomKey, true);
             isKeyObtained = true;
             Debug.Log("교실 열쇠 획득");
             if (successMonologue != null) TextManager.Instance.PlayText(successMonologue);
@@ -24,6 +24,9 @@ public class ToiletBowlInteractable : MonoBehaviour, IInteractable
             Debug.Log("1~3번째 좌변기");
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     public string GetInteractPrompt()
     {
