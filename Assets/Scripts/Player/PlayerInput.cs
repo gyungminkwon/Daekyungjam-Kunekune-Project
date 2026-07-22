@@ -8,7 +8,9 @@ public class PlayerInput : MonoBehaviour
     public float MoveInput => Action.Player.Move.ReadValue<float>();
     public bool IsSprint => Action.Player.Sprint.IsPressed();
     public bool IsCrouch => Action.Player.Crouch.IsPressed();
-    public bool IsInteract => Action.Player.Interact.WasPressedThisFrame();
+    public bool InteractPressed => Action.Player.Interact.WasPressedThisFrame();
+    public bool InteractHeld => Action.Player.Interact.IsPressed();
+    public bool InteractReleased => Action.Player.Interact.WasReleasedThisFrame();
 
     void Awake()
     {

@@ -92,7 +92,7 @@ public class GameManager : MonoBehaviour
         currentState = GameState.Playing;
         currentStage = Stage.House;
 
-        playerInputScript.enabled = true;
+        if (playerInputScript != null) playerInputScript.enabled = true;
 
         Debug.Log("인트로 종료. Stage-House 시작");
     }

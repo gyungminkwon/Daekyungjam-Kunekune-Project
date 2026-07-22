@@ -27,7 +27,7 @@ public class Door : MonoBehaviour, IInteractable
         if (closedSprite != null) sr.sprite = closedSprite;
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (targetPos == null) return;
 
@@ -40,6 +40,9 @@ public class Door : MonoBehaviour, IInteractable
 
         StartCoroutine(InteractRoutine());
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     private IEnumerator InteractRoutine()
     {

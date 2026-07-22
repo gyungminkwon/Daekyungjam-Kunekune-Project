@@ -13,11 +13,13 @@ public class Bulkhead : MonoBehaviour, IInteractable
         sr.sprite = closedSprite;
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (sr.sprite == openedSprite) sr.sprite = closedSprite;
         else sr.sprite = openedSprite;
     }
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     public string GetInteractPrompt()
     {
