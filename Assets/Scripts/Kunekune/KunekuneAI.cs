@@ -167,13 +167,21 @@ public class KunekuneAI : MonoBehaviour
         float targetX = isChasingDoor ? doorTargetPos.x : player.position.x;
 
         // 방향 전환
-        if (targetX < transform.position.x)
+        // if (targetX < transform.position.x)
+        // {
+        //     spriteRenderer.flipX = true;
+        // }
+        // else
+        // {
+        //     spriteRenderer.flipX = false;
+        // }
+        if (player.position.x < transform.position.x)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         
         if (!isChasing) return;
