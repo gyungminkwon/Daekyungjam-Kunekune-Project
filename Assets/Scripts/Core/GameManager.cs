@@ -4,8 +4,9 @@ using UnityEngine.Playables;
 public enum GameState
 {
     Title,
-    IntroCutscene,
+    Cutscene,
     Playing,
+    Interact,
     GameOver,
     GameClear
 }
@@ -75,7 +76,7 @@ public class GameManager : MonoBehaviour
 
     private void StartIntroCutscene()
     {
-        currentState = GameState.IntroCutscene;
+        currentState = GameState.Cutscene;
         introDirector.stopped += OnIntroTimelineEnded;
 
         introDirector.Play();
@@ -94,13 +95,18 @@ public class GameManager : MonoBehaviour
         currentDate = Date.Day1;
 
         if (playerInputScript != null) playerInputScript.enabled = true;
-        cg.alpha = 1f;
+        if (cg != null) cg.alpha = 1f;
 
         Debug.Log("인트로 종료");
     }
 
-    public void ChangeStage(Date nextDate)
+    public void ChangeDate(Date nextDate)
     {
         currentDate = nextDate;
+    }
+
+    public void ChangeState(GameState newState)
+    {
+        currentState = newState;
     }
 }

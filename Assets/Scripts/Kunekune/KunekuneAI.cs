@@ -3,6 +3,10 @@ using System.Collections;
 
 public class KunekuneAI : MonoBehaviour
 {
+    public static bool isInteracting = false;
+    private float previousAnimSpeed = 1f;
+    private bool wasInteracting = false;
+
     [Header("기본 설정")]
     public Transform player;
     public float chaseTime = 10f; // 최대 추격 시간
@@ -94,7 +98,12 @@ public class KunekuneAI : MonoBehaviour
             anim.Play(currentAnimName);
         }
 
-        yield return new WaitForSeconds(currentSpawnDelay);
+        float spawnTimer = 0f;
+        while (spawnTimer < currentSpawnDelay)
+        {
+            if (!isInteracting) spawnTimer += Time.deltaTime;
+            yield return null;
+        }
 
         // 2: 추격 시작
         isChasing = true;
@@ -103,7 +112,13 @@ public class KunekuneAI : MonoBehaviour
         anim.speed = walkSpeedMultiplier;
 
         anim.Play("kunekune_move");
-        yield return new WaitForSeconds(chaseTime);
+
+        float chaseTimer = 0f;
+        while (chaseTimer < chaseTime)
+        {
+            if (!isInteracting) chaseTimer += Time.deltaTime;
+            yield return null;
+        }
 
         // 3: 추격 종료
         isChasing = false;
@@ -144,7 +159,7 @@ public class KunekuneAI : MonoBehaviour
 
         while (elapsed < timeout)
         {
-            elapsed += Time.deltaTime;
+            if (!isInteracting) elapsed += Time.deltaTime;
             yield return null;
         }
 
@@ -162,18 +177,42 @@ public class KunekuneAI : MonoBehaviour
 
     void Update()
     {
+        if (isInteracting)
+        {
+            if (!wasInteracting)
+            {
+                previousAnimSpeed = anim.speed;
+                anim.speed = 0f;
+                wasInteracting = true;
+            }
+            return;
+        }
+        else if (wasInteracting)
+        {
+            anim.speed = previousAnimSpeed;
+            wasInteracting = false;
+        }
+
         if (player == null) return;
 
         float targetX = isChasingDoor ? doorTargetPos.x : player.position.x;
 
         // 방향 전환
-        if (targetX < transform.position.x)
+        // if (targetX < transform.position.x)
+        // {
+        //     spriteRenderer.flipX = true;
+        // }
+        // else
+        // {
+        //     spriteRenderer.flipX = false;
+        // }
+        if (player.position.x < transform.position.x)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         
         if (!isChasing) return;
