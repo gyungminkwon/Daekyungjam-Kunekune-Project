@@ -4,8 +4,9 @@ using UnityEngine.Playables;
 public enum GameState
 {
     Title,
-    IntroCutscene,
+    Cutscene,
     Playing,
+    Interact,
     GameOver,
     GameClear
 }
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     [Header("Player References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerInput playerInputScript;
+    [SerializeField] private CanvasGroup cg;
 
     void Awake()
     {
@@ -68,11 +70,13 @@ public class GameManager : MonoBehaviour
         playerSr.color = c;
 
         playerObject.GetComponent<PlayerInput>().enabled = false;
+        
+        if (cg != null) cg.alpha = 0f;
     }
 
     private void StartIntroCutscene()
     {
-        currentState = GameState.IntroCutscene;
+        currentState = GameState.Cutscene;
         introDirector.stopped += OnIntroTimelineEnded;
 
         introDirector.Play();
@@ -91,12 +95,18 @@ public class GameManager : MonoBehaviour
         currentDate = Date.Day1;
 
         if (playerInputScript != null) playerInputScript.enabled = true;
+        if (cg != null) cg.alpha = 1f;
 
         Debug.Log("인트로 종료");
     }
 
-    public void ChangeStage(Date nextDate)
+    public void ChangeDate(Date nextDate)
     {
         currentDate = nextDate;
+    }
+
+    public void ChangeState(GameState newState)
+    {
+        currentState = newState;
     }
 }

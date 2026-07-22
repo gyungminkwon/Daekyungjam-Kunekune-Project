@@ -3,25 +3,16 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Playables;
-using System.Runtime.CompilerServices;
-using NUnit.Framework.Constraints;
 
 public class TextManager : MonoBehaviour
 {
     public static TextManager Instance { get; private set; }
 
-    private enum DialogState
-    {
-        Typing,
-        WaitingForNext
-    }
-
-    private DialogState dialogState;
-
     [Header("UI References")]
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
     public Image iconImage;
+    public Image TextboxButton;
 
     public CanvasGroup fadePanel;
     public TextMeshProUGUI fadeText;
@@ -44,6 +35,8 @@ public class TextManager : MonoBehaviour
 
     public void PlayText(TextData data, PlayableDirector director = null, float enableDelay = 0f)
     {
+        GameManager.Instance?.ChangeState(GameState.Interact);
+        KunekuneAI.isInteracting = true; 
         StartCoroutine(TextRoutine(data, director, enableDelay));
     }
 
@@ -68,7 +61,9 @@ public class TextManager : MonoBehaviour
     {
         // 이동 조작 불가 처리
         playerInput.enabled = false;
-        dialogPanel.SetActive(true);
+        if (data.lines.Length > 0) dialogPanel.SetActive(true);
+        else dialogPanel.SetActive(false);
+
         if (director != null) director.Pause();
 
         if (data.type == TextType.Interaction && data.objectIcon != null)
@@ -90,8 +85,10 @@ public class TextManager : MonoBehaviour
         dialogPanel.SetActive(false);
         // 플레이어 이동 가능 처리 (약간의 딜레이 주기)
         yield return new WaitForSeconds(enableDelay);
-        if (GameManager.Instance?.currentState != GameState.IntroCutscene)
+        if (GameManager.Instance?.currentState != GameState.Cutscene)
             playerInput.enabled = true;
+        GameManager.Instance?.ChangeState(GameState.Playing);
+        KunekuneAI.isInteracting = false; 
     }
 
     private IEnumerator HandleScreenFade(TextData data)
@@ -104,26 +101,28 @@ public class TextManager : MonoBehaviour
 
         yield return new WaitForSeconds(data.displayDuration);
 
-        yield return FadeCanvasGroup(fadePanel, 1, 0, 0.3f); 
+        yield return FadeCanvasGroup(fadePanel, 1, 0, 0.3f);
+
+        GameManager.Instance?.ChangeState(GameState.Playing);
+        KunekuneAI.isInteracting = false; 
     }
 
     private IEnumerator ShowLine(string line)
     {
-        dialogState = DialogState.Typing;
 
         yield return TypeLine(line);
 
         yield return new WaitForSeconds(0.2f);
 
-        dialogState = DialogState.WaitingForNext;
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space));
 
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
-
-        yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+        yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space));
     }
 
     private IEnumerator TypeLine(string line)
     {
+        TextboxButton?.gameObject.SetActive(false);
+
         dialogText.text = line;
         dialogText.maxVisibleCharacters = 0;
 
@@ -132,9 +131,10 @@ public class TextManager : MonoBehaviour
 
         while (visible < line.Length)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.F) || Input.GetKeyDown(KeyCode.Space))
             {
                 dialogText.maxVisibleCharacters = line.Length;
+                TextboxButton?.gameObject.SetActive(true);
                 yield break;
             }
 
@@ -146,7 +146,7 @@ public class TextManager : MonoBehaviour
                 visible++;
                 dialogText.maxVisibleCharacters = visible;
             }
-
+            TextboxButton?.gameObject.SetActive(true);
             yield return null;
         }
     }
@@ -163,6 +163,10 @@ public class TextManager : MonoBehaviour
         yield return new WaitForSeconds(data.displayDuration);
 
         yield return FadeCanvasGroup(systemPanel, 1, 0, 0.5f);
+
+
+        GameManager.Instance?.ChangeState(GameState.Playing);
+        KunekuneAI.isInteracting = false; 
     }
 
     private IEnumerator FadeCanvasGroup(CanvasGroup cg, float start, float end, float duration)

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2e626d5631f5d42bdea3ab88738303, type: 3}
+  m_Name: School_toilet
+  m_EditorClassIdentifier: Assembly-CSharp::TextData
+  type: 0
+  lines:
+  - "\uC6B0\uC720\uB97C \uB354 \uBA39\uACE0 \uC2F6\uC9C0 \uC54A\uC544......"
+  objectIcon: {fileID: 0}
+  displayDuration: 2

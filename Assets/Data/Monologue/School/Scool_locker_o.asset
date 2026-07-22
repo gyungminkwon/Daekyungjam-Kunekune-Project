@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2e626d5631f5d42bdea3ab88738303, type: 3}
+  m_Name: Scool_locker_o
+  m_EditorClassIdentifier: Assembly-CSharp::TextData
+  type: 0
+  lines:
+  - "\uC0AC\uBB3C\uD568\uC774 \uC790\uBB3C\uC1E0\uB85C \uC7A0\uACA8\uC788\uB2E4."
+  - "\uBE44\uBC00\uBC88\uD638\uB97C \uC785\uB825\uD574\uC57C \uD55C\uB2E4."
+  objectIcon: {fileID: 0}
+  displayDuration: 2
