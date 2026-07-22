@@ -4,10 +4,10 @@ using UnityEngine.UI;
 public class Item : MonoBehaviour, IInteractable
 {   
     [SerializeField] private Image holdGuage;
-    [SerializeField] private float threshold = 3f;
+    [SerializeField] private float threshold = 3f;  // 획득을 위해 F키를 홀드해야 하는 시간
     [SerializeField] private string itemName;
-    [SerializeField] private TextData textData;
-    private bool isAcquired = false;
+    [SerializeField] private TextData textData; // 아이템 획득 시 띄울 텍스트
+    private bool isAcquired = false;    // 재획득 방지를 위한 플래그 변수
     private float holdTimer = 0f;
     private Animator anim;
 
