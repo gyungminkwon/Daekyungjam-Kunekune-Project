@@ -11,6 +11,7 @@ public class FreezeArea : MonoBehaviour
 
     private bool isPlayerInside = false;
     private float insideTimer = 0f;
+    private bool isRegisteredToChaseManager = false;
 
     void Awake()
     {
@@ -35,12 +36,40 @@ public class FreezeArea : MonoBehaviour
                         HeatManager.Instance.HeatDown(freezeIntensity);
                     }
                 }
+
+                // ==================================================
+                // ChaseSceneManager 연계 사항
+                // ==================================================
+                if (!isRegisteredToChaseManager)
+                {
+                    if (ChaseSceneManager.Instance != null)
+                    {
+                        ChaseSceneManager.Instance.AddPlayerFreezeeArea();
+                    }
+                    isRegisteredToChaseManager = true;
+                }
             }
             else
             {
                 // 콜라이더 근처엔 있지만 몸통 기준점이 햇빛 쪽으로 나갔다면 타이머 초기화
                 insideTimer = 0f;
+                ResetChaseManagerRegistration();
             }
+        }
+    }
+
+    // ==================================================
+    // ChaseSceneManager 연계 사항
+    // ==================================================
+    private void ResetChaseManagerRegistration()
+    {
+        if (isRegisteredToChaseManager)
+        {
+            if (ChaseSceneManager.Instance != null)
+            {
+                ChaseSceneManager.Instance.RemovePlayerFreezeeArea();
+            }
+            isRegisteredToChaseManager = false;
         }
     }
 
@@ -61,6 +90,8 @@ public class FreezeArea : MonoBehaviour
             isPlayerInside = false;
             playerHeatPoint = null;
             insideTimer = 0f;
+
+            ResetChaseManagerRegistration();
         }
     }
 }

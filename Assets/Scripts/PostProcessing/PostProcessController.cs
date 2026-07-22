@@ -80,9 +80,9 @@ public class PostProcessController : MonoBehaviour
             if (filmGrain != null) 
                 filmGrain.intensity.Override(distanceRatio * maxFilmGrainIntensity);
             
-            if (motionBlur != null && kunekuneScript != null)
+            if (motionBlur != null)
             {
-                if (kunekuneScript.isDashing)
+                if (kunekuneScript != null && kunekuneScript.isDashing)
                     motionBlur.intensity.Override(maxMotionBlurIntensity);
                 else
                     motionBlur.intensity.Override(0f);
