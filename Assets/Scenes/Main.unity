@@ -4753,7 +4753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IntroCutscene
   curCam: {fileID: 609158598}
   nextCam: {fileID: 853284601}
-  ui: {fileID: 0}
+  ui: {fileID: 427956011}
 --- !u!1 &556350416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   requiredFlagID: 3
-  isLocked: 0
+  isLocked: 1
   targetPos: {fileID: 1971076553}
   closedSprite: {fileID: 5846439018973909545, guid: 118bb9e84a64e9d40a597fd4c5c6d0b1, type: 3}
   openedSprite: {fileID: -6924716326404348814, guid: ac58896990cbcdc4fbb291ae03b36ee7, type: 3}
@@ -6879,7 +6879,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   requiredFlagID: 0
-  isLocked: 0
+  isLocked: 1
   targetPos: {fileID: 750204058}
   closedSprite: {fileID: -3212834068904690808, guid: 5d7ba09e729c6c44c86d96a0f1228815, type: 3}
   openedSprite: {fileID: -2949409088381595091, guid: 673d09c2e8af5894bba9fdbdb5e8323f, type: 3}
@@ -8158,7 +8158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   requiredFlagID: 3
-  isLocked: 0
+  isLocked: 1
   targetPos: {fileID: 988686838}
   closedSprite: {fileID: 5846439018973909545, guid: 118bb9e84a64e9d40a597fd4c5c6d0b1, type: 3}
   openedSprite: {fileID: -6924716326404348814, guid: ac58896990cbcdc4fbb291ae03b36ee7, type: 3}
@@ -14961,7 +14961,7 @@ CanvasGroup:
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_IgnoreParentGroups: 1
 --- !u!1 &1777187153
 GameObject:
   m_ObjectHideFlags: 0
