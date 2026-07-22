@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 21154937}
   m_Layer: 0
   m_Name: pot_kunekune_0
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2442,7 +2442,7 @@ GameObject:
   - component: {fileID: 250810795}
   m_Layer: 0
   m_Name: pot_kunekune_0 (1)
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3356,7 +3356,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -4057,7 +4057,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427956009}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -6942,7 +6942,6 @@ GameObject:
   - component: {fileID: 763964190}
   - component: {fileID: 763964189}
   - component: {fileID: 763964192}
-  - component: {fileID: 763964191}
   m_Layer: 0
   m_Name: school_toilet_bulkhead_2
   m_TagString: Untagged
@@ -7070,20 +7069,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &763964191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763964186}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cb53160c9c794ab5ec9ee212e6a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bulkhead
-  closedSprite: {fileID: -3135500595400313000, guid: bd26a9c5d40218e4498d129923a76047, type: 3}
-  openedSprite: {fileID: -265188680762976131, guid: 0d81e4e06c975e444981a9005a512894, type: 3}
 --- !u!114 &763964192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7200,6 +7185,7 @@ GameObject:
   - component: {fileID: 781742629}
   - component: {fileID: 781742630}
   - component: {fileID: 781742631}
+  - component: {fileID: 781742632}
   m_Layer: 0
   m_Name: school_toilet_jwabyeongi_2
   m_TagString: Untagged
@@ -7296,6 +7282,52 @@ MonoBehaviour:
   isEventBowl: 0
   failMonologue: {fileID: 11400000, guid: 5d50a37406805534cace43c411b59fd7, type: 2}
   successMonologue: {fileID: 0}
+--- !u!61 &781742632
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781742628}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 2.375}
+    newSize: {x: 1.125, y: 2.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.125, y: 2.375}
+  m_EdgeRadius: 0
 --- !u!1 &806880260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7528,7 +7560,6 @@ GameObject:
   - component: {fileID: 850699154}
   - component: {fileID: 850699153}
   - component: {fileID: 850699156}
-  - component: {fileID: 850699155}
   m_Layer: 0
   m_Name: school_toilet_bulkhead_1
   m_TagString: Untagged
@@ -7656,20 +7687,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &850699155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850699150}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cb53160c9c794ab5ec9ee212e6a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bulkhead
-  closedSprite: {fileID: -3135500595400313000, guid: bd26a9c5d40218e4498d129923a76047, type: 3}
-  openedSprite: {fileID: -265188680762976131, guid: 0d81e4e06c975e444981a9005a512894, type: 3}
 --- !u!114 &850699156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7683,7 +7700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ToiletDoor
   openedSprite: {fileID: -265188680762976131, guid: 0d81e4e06c975e444981a9005a512894, type: 3}
-  innerToiletBowl: {fileID: 781742631}
+  innerToiletBowl: {fileID: 967249069}
 --- !u!1 &853284598
 GameObject:
   m_ObjectHideFlags: 0
@@ -8222,7 +8239,7 @@ GameObject:
   - component: {fileID: 886513038}
   m_Layer: 0
   m_Name: broomstick
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8419,7 +8436,7 @@ GameObject:
   - component: {fileID: 897788272}
   m_Layer: 0
   m_Name: fire_extinguisher_kunekune_0 (3)
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9038,6 +9055,7 @@ MonoBehaviour:
   introSpawnPoint: {fileID: 862129730}
   playerObject: {fileID: 1087083060}
   playerInputScript: {fileID: 1087083063}
+  cg: {fileID: 427956011}
 --- !u!4 &953199364
 Transform:
   m_ObjectHideFlags: 0
@@ -9179,6 +9197,7 @@ GameObject:
   - component: {fileID: 967249067}
   - component: {fileID: 967249068}
   - component: {fileID: 967249069}
+  - component: {fileID: 967249070}
   m_Layer: 0
   m_Name: school_toilet_jwabyeongi_1
   m_TagString: Untagged
@@ -9275,6 +9294,52 @@ MonoBehaviour:
   isEventBowl: 0
   failMonologue: {fileID: 11400000, guid: 5d50a37406805534cace43c411b59fd7, type: 2}
   successMonologue: {fileID: 0}
+--- !u!61 &967249070
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967249066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 2.375}
+    newSize: {x: 1.125, y: 2.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.125, y: 2.375}
+  m_EdgeRadius: 0
 --- !u!1 &988686837
 GameObject:
   m_ObjectHideFlags: 0
@@ -10102,6 +10167,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1084879588}
   - component: {fileID: 1084879587}
+  - component: {fileID: 1084879590}
+  - component: {fileID: 1084879589}
   m_Layer: 0
   m_Name: house_room_funeral_1
   m_TagString: Untagged
@@ -10183,6 +10250,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 357749610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1084879589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084879586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c98545cb23e593f4b9d6dae38b38e91c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FuneralPlatform
+  afterInteractSprite: {fileID: 450423918, guid: 6f89a43f48cd2754483106399d0d0fdd, type: 3}
+  flag: 6
+  textData: {fileID: 11400000, guid: 1f5a33cda8bf4ce45907d658ebbec0b9, type: 2}
+--- !u!61 &1084879590
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084879586}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.8125, y: 4.9375}
+    newSize: {x: 4.8125, y: 4.9375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 4.8125, y: 4.9375}
+  m_EdgeRadius: 0
 --- !u!1 &1087083060
 GameObject:
   m_ObjectHideFlags: 0
@@ -10282,7 +10410,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087083060}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 230e8f88d5a8e9645a97eebf6f72bd70, type: 3}
   m_Name: 
@@ -10846,6 +10974,7 @@ GameObject:
   - component: {fileID: 1175019539}
   - component: {fileID: 1175019540}
   - component: {fileID: 1175019541}
+  - component: {fileID: 1175019542}
   m_Layer: 0
   m_Name: school_toilet_jwabyeongi_0
   m_TagString: Untagged
@@ -10942,6 +11071,52 @@ MonoBehaviour:
   isEventBowl: 0
   failMonologue: {fileID: 11400000, guid: 5d50a37406805534cace43c411b59fd7, type: 2}
   successMonologue: {fileID: 0}
+--- !u!61 &1175019542
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175019538}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 2.375}
+    newSize: {x: 1.125, y: 2.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.125, y: 2.375}
+  m_EdgeRadius: 0
 --- !u!1 &1191990726
 GameObject:
   m_ObjectHideFlags: 0
@@ -11135,6 +11310,7 @@ GameObject:
   - component: {fileID: 1244483969}
   - component: {fileID: 1244483970}
   - component: {fileID: 1244483971}
+  - component: {fileID: 1244483972}
   m_Layer: 0
   m_Name: school_toilet_jwabyeongi_3
   m_TagString: Untagged
@@ -11231,6 +11407,52 @@ MonoBehaviour:
   isEventBowl: 0
   failMonologue: {fileID: 11400000, guid: 5d50a37406805534cace43c411b59fd7, type: 2}
   successMonologue: {fileID: 0}
+--- !u!61 &1244483972
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1244483968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.125, y: 2.375}
+    newSize: {x: 1.125, y: 2.375}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.125, y: 2.375}
+  m_EdgeRadius: 0
 --- !u!1 &1246097690
 GameObject:
   m_ObjectHideFlags: 0
@@ -11771,7 +11993,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1313905889}
   - component: {fileID: 1313905891}
-  - component: {fileID: 1313905890}
   m_Layer: 3
   m_Name: First Visit Trigger
   m_TagString: Untagged
@@ -11794,20 +12015,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 385734131}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1313905890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313905888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a70206f9265a454bb7b70b447ef025b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirstVisitTrigger
-  flag: 6
-  triggerText: {fileID: 11400000, guid: 5d7f72b1925dde542994f1aab66a9690, type: 2}
 --- !u!61 &1313905891
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12049,7 +12256,7 @@ GameObject:
   - component: {fileID: 1337084120}
   m_Layer: 0
   m_Name: fire_extinguisher_kunekune_0
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12154,7 +12361,6 @@ GameObject:
   - component: {fileID: 1348216866}
   - component: {fileID: 1348216865}
   - component: {fileID: 1348216868}
-  - component: {fileID: 1348216867}
   m_Layer: 0
   m_Name: school_toilet_bulkhead_3
   m_TagString: Untagged
@@ -12282,20 +12488,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &1348216867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348216862}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cb53160c9c794ab5ec9ee212e6a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bulkhead
-  closedSprite: {fileID: -3135500595400313000, guid: bd26a9c5d40218e4498d129923a76047, type: 3}
-  openedSprite: {fileID: -265188680762976131, guid: 0d81e4e06c975e444981a9005a512894, type: 3}
 --- !u!114 &1348216868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13496,7 +13688,7 @@ GameObject:
   - component: {fileID: 1594677304}
   m_Layer: 0
   m_Name: fire_extinguisher_kunekune_0 (1)
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13841,6 +14033,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4856581285473425661, guid: 34cbf5392d5f5f547b562bf981288c4a, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1087083068}
     - target: {fileID: 9183064387726379997, guid: 34cbf5392d5f5f547b562bf981288c4a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -14927,7 +15123,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1760928107
 RectTransform:
@@ -15636,7 +15832,7 @@ GameObject:
   - component: {fileID: 1894530524}
   m_Layer: 0
   m_Name: fire_extinguisher_kunekune_0 (2)
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16963,7 +17159,6 @@ GameObject:
   - component: {fileID: 2063637034}
   - component: {fileID: 2063637033}
   - component: {fileID: 2063637036}
-  - component: {fileID: 2063637035}
   m_Layer: 0
   m_Name: school_toilet_bulkhead_0
   m_TagString: Untagged
@@ -17091,20 +17286,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &2063637035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063637030}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 219cb53160c9c794ab5ec9ee212e6a47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Bulkhead
-  closedSprite: {fileID: -3135500595400313000, guid: bd26a9c5d40218e4498d129923a76047, type: 3}
-  openedSprite: {fileID: -265188680762976131, guid: 0d81e4e06c975e444981a9005a512894, type: 3}
 --- !u!114 &2063637036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17482,7 +17663,7 @@ GameObject:
   - component: {fileID: 2134716955}
   m_Layer: 0
   m_Name: pot_kunekune_0
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17745,7 +17926,7 @@ GameObject:
   - component: {fileID: 2145810989}
   m_Layer: 0
   m_Name: clothes_hanger_kunekune_0
-  m_TagString: Untagged
+  m_TagString: KunekuneProp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17876,17 +18057,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4370987518877124978}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4694891033344556303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 473}
-  m_SizeDelta: {x: 500, y: 500}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 2.4691162, y: 366.64966}
+  m_SizeDelta: {x: 64.19458, y: 772.8033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649784611253715097
 MonoBehaviour:
@@ -18166,7 +18347,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
   m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -18398,7 +18579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4501782035393511208
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18431,8 +18612,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7743473689180102766}
   - {fileID: 589241224993348021}
+  - {fileID: 7743473689180102766}
   m_Father: {fileID: 8108210297391501055}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -18461,7 +18642,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &5236846533247694975
 MonoBehaviour:

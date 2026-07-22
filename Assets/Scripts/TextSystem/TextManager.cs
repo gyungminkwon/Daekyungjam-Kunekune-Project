@@ -3,20 +3,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Playables;
-using System.Runtime.CompilerServices;
-using NUnit.Framework.Constraints;
 
 public class TextManager : MonoBehaviour
 {
     public static TextManager Instance { get; private set; }
-
-    private enum DialogState
-    {
-        Typing,
-        WaitingForNext
-    }
-
-    private DialogState dialogState;
 
     [Header("UI References")]
     public GameObject dialogPanel;
@@ -109,13 +99,10 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator ShowLine(string line)
     {
-        dialogState = DialogState.Typing;
 
         yield return TypeLine(line);
 
         yield return new WaitForSeconds(0.2f);
-
-        dialogState = DialogState.WaitingForNext;
 
         yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 

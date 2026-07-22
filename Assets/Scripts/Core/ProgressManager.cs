@@ -12,6 +12,8 @@ public enum ProgressFlag
     HasTrowel,
     HasBusTicket,
 
+    Funeral,
+
     FirstVisit_House,
     FirstVisit_School
 }

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     [Header("Player References")]
     [SerializeField] private GameObject playerObject;
     [SerializeField] private PlayerInput playerInputScript;
+    [SerializeField] private CanvasGroup cg;
 
     void Awake()
     {
@@ -68,6 +69,8 @@ public class GameManager : MonoBehaviour
         playerSr.color = c;
 
         playerObject.GetComponent<PlayerInput>().enabled = false;
+        
+        if (cg != null) cg.alpha = 0f;
     }
 
     private void StartIntroCutscene()
@@ -91,6 +94,7 @@ public class GameManager : MonoBehaviour
         currentDate = Date.Day1;
 
         if (playerInputScript != null) playerInputScript.enabled = true;
+        cg.alpha = 1f;
 
         Debug.Log("인트로 종료");
     }
