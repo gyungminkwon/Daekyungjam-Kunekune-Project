@@ -7664,12 +7664,12 @@ GameObject:
   - component: {fileID: 962987870}
   - component: {fileID: 962987869}
   m_Layer: 0
-  m_Name: Main Banner
+  m_Name: Title Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &962987869
 Animator:
   serializedVersion: 7
@@ -7741,7 +7741,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 999
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: -4320295261928297051, guid: 508ecce1478e5794e934c2eb01be1295, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7760,8 +7760,8 @@ Transform:
   m_GameObject: {fileID: 962987868}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.1800003, y: 12.23, z: 0}
-  m_LocalScale: {x: 9, y: 5, z: 1}
+  m_LocalPosition: {x: 0.5, y: 12.5, z: 0}
+  m_LocalScale: {x: 0.22, y: 0.22, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3351501666196267966}

@@ -18,9 +18,6 @@ public class TextManager : MonoBehaviour
 
     public CanvasGroup systemPanel;
     public TextMeshProUGUI systemText;
-
-    private bool isWaitingForClick = false;
-
     private PlayerInput playerInput;
 
     private void Awake()
@@ -85,12 +82,10 @@ public class TextManager : MonoBehaviour
                 yield return new WaitForSeconds(0.05f);
             }
 
-            isWaitingForClick = true;
             while (!Input.GetMouseButtonDown(0))
             {
                 yield return null;
             }
-            isWaitingForClick = false;
 
             yield return null;
         }

@@ -14,9 +14,9 @@ public enum GameState
 
 public enum Stage
 {
-    House,
-    School,
-    RiceField,
+    Day1,
+    Day2,
+    Day3,
     Locked
 }
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Game States")] 
     public GameState currentState = GameState.Title;
-    public Stage currentStage = Stage.House;
+    public Stage currentStage = Stage.Day1;
 
     [Header("Intro & UI References")]
     public GameObject titleBannerUI;
@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     private void StartGameplay()
     {
         currentState = GameState.Playing;
-        currentStage = Stage.House;
+        currentStage = Stage.Day1;
 
         if (playerInputScript != null) playerInputScript.enabled = true;
 

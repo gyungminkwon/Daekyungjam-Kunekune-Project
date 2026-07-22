@@ -7,7 +7,7 @@ public class ToiletBowlInteractable : MonoBehaviour, IInteractable
     public TextData failMonologue;
     public TextData successMonologue;
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (isKeyObtained) return;
 
@@ -24,6 +24,9 @@ public class ToiletBowlInteractable : MonoBehaviour, IInteractable
             Debug.Log("1~3번째 좌변기");
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     public string GetInteractPrompt()
     {

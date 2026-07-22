@@ -33,7 +33,7 @@ public class ConditionDoor : MonoBehaviour, IInteractable
         if (closedSprite != null) sr.sprite = closedSprite;
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (GameManager.Instance.currentStage < unlockStage)
         {
@@ -70,6 +70,9 @@ public class ConditionDoor : MonoBehaviour, IInteractable
             Debug.Log($"{doorName} 잠김");
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     private IEnumerator EnterDoorRoutine()
     {

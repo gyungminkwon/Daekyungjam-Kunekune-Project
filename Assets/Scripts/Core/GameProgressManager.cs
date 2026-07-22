@@ -13,6 +13,12 @@ public class GameProgressManager : MonoBehaviour
     public bool hasClassroomKey = false;
     public bool hasTrowel = false;
     public bool hasBusTicket = false;
+
+    public bool hasFirstHeated = false; // 더위 게이지 첫 30 달성
+
+    [Header("Visited Flag")]
+    public bool firstVisit_House = false;   // House 첫 입장
+    public bool firstVisit_School = false;  // School 첫 입장
     
     [Header("Event")]
     public bool isPot = false;

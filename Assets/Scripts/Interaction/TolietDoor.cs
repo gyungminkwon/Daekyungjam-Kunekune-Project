@@ -23,7 +23,7 @@ public class ToiletDoor : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact()
+    public void OnInteractPressed()
     {
         if (isOpened) return;
 
@@ -44,6 +44,9 @@ public class ToiletDoor : MonoBehaviour, IInteractable
             }
         }
     }
+
+    public void OnInteractHeld() {}
+    public void OnInteractReleased() {}
 
     public string GetInteractPrompt()
     {

@@ -4,7 +4,9 @@ using UnityEngine;
 public class Door : MonoBehaviour, IInteractable
 {
     [Header("Unlock & Link Settings")]
-    [SerializeField] private Stage unlockStage;
+    [SerializeField] private ProgressFlag requiredFlagID;
+    [SerializeField] private bool isLocked = false;
+
     [SerializeField] private Transform targetPos;
     
     [Header("Sprite Settings")]
@@ -27,12 +29,38 @@ public class Door : MonoBehaviour, IInteractable
         if (closedSprite != null) sr.sprite = closedSprite;
     }
 
+    void OnEnable()
+    {
+        if (ProgressManager.Instance != null) ProgressManager.Instance.OnFlagChanged += HandleFlagChanged;
+    }
+
+    void OnDisable()
+    {
+        if (ProgressManager.Instance != null) ProgressManager.Instance.OnFlagChanged -= HandleFlagChanged;
+    }
+
+    private void HandleFlagChanged(ProgressFlag flagID, bool value)
+    {
+        if (flagID == requiredFlagID && value)
+        {
+            UnlockDoor();
+        }
+    }
+
+    public void UnlockDoor()
+    {
+        isLocked = false;
+        Debug.Log($"{gameObject.name} 잠금 해제");
+
+        // 필요한 경우, 여기에 연출 추가
+    }
+
     public void OnInteractPressed()
     {
         if (targetPos == null) return;
 
         // 초반에 가지 못하는 곳 등 권한 제어
-        if (GameManager.Instance.currentStage < unlockStage)
+        if (isLocked)
         {
             if (lockedMonologue != null) TextManager.Instance.PlayText(lockedMonologue);
             return;

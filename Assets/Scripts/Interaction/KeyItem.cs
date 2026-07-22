@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Item : MonoBehaviour, IInteractable
+public class KeyItem : MonoBehaviour, IInteractable
 {   
+    [SerializeField] private ProgressFlag flag;
     [SerializeField] private Image holdGuage;
     [SerializeField] private float threshold = 3f;  // 획득을 위해 F키를 홀드해야 하는 시간
     [SerializeField] private string itemName;
@@ -45,9 +46,9 @@ public class Item : MonoBehaviour, IInteractable
         Debug.Log($"{gameObject.name} 아이템 획득");
         TextManager.Instance.PlayText(textData);
 
-        isAcquired = true;
+        ProgressManager.Instance.SetFlag(flag, true);
+
         anim?.SetTrigger("Acquire");
-        GameManager.Instance.ChangeStage(Stage.School);
         gameObject.SetActive(false);
     }
 
