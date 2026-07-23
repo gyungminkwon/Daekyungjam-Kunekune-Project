@@ -140,10 +140,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KunekuneAI
   player: {fileID: 0}
-  chaseTime: 10
+  chaseTime: 8
   spawnDelay: 0
-  slowSpeed: 4
-  dashSpeed: 16
+  slowSpeed: 3
+  dashSpeed: 11
   slowDuration: 2
   dashDuration: 0.5
   walkSpeedMultiplier: 0.75
