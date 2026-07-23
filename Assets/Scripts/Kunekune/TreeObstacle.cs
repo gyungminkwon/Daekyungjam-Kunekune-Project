@@ -7,6 +7,10 @@ public class TreeObstacle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("사망");
+            if (ChaseSceneManager.Instance != null)
+            {
+                ChaseSceneManager.Instance.GameOver(ChaseSceneManager.DeathCause.Rope);
+            }
         }
     }
 }

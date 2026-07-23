@@ -2,16 +2,17 @@ using UnityEngine;
 
 public class FreezeArea : MonoBehaviour
 {
-    public int freezeIntensity = 5;
+    // public int freezeIntensity = 5;
 
-    [SerializeField] private float gracePeriod = 0.3f;
+    // [SerializeField] private float gracePeriod = 0.3f;
 
     private Collider2D shadowCollider;
     private PlayerHeatPoint playerHeatPoint; // ★ 새로 만든 좌표 관리자 연결
 
     private bool isPlayerInside = false;
-    private float insideTimer = 0f;
-    private bool isRegisteredToChaseManager = false;
+    // private float insideTimer = 0f;
+    // private bool isRegisteredToChaseManager = false;
+    private bool isRegisteredToHeatManager = false;
 
     void Awake()
     {
@@ -28,48 +29,37 @@ public class FreezeArea : MonoBehaviour
             // 몸통 좌표가 그늘 영역 안에 제대로 들어왔는지 검사
             if (shadowCollider.OverlapPoint(checkPoint))
             {
-                insideTimer += Time.deltaTime;
-                if (insideTimer >= gracePeriod)
-                {
-                    if (HeatManager.Instance != null)
-                    {
-                        HeatManager.Instance.HeatDown(freezeIntensity);
-                    }
-                }
+                // insideTimer += Time.deltaTime;
+                // if (insideTimer >= gracePeriod)
+                // {
+                //     if (HeatManager.Instance != null)
+                //     {
+                //         // HeatManager.Instance.HeatDown(freezeIntensity);
+                //     }
+                // }
 
-                // ==================================================
-                // ChaseSceneManager 연계 사항
-                // ==================================================
-                if (!isRegisteredToChaseManager)
+                if (!isRegisteredToHeatManager && HeatManager.Instance != null)
                 {
-                    if (ChaseSceneManager.Instance != null)
-                    {
-                        ChaseSceneManager.Instance.AddPlayerFreezeeArea();
-                    }
-                    isRegisteredToChaseManager = true;
+                    HeatManager.Instance.RegisterFreezeArea(this);
+                    isRegisteredToHeatManager = true;
                 }
             }
             else
             {
                 // 콜라이더 근처엔 있지만 몸통 기준점이 햇빛 쪽으로 나갔다면 타이머 초기화
-                insideTimer = 0f;
-                ResetChaseManagerRegistration();
+                // insideTimer = 0f;
+                // ResetChaseManagerRegistration();
+                ResetHeatManagerRegistration();
             }
         }
     }
 
-    // ==================================================
-    // ChaseSceneManager 연계 사항
-    // ==================================================
-    private void ResetChaseManagerRegistration()
+    private void ResetHeatManagerRegistration()
     {
-        if (isRegisteredToChaseManager)
+        if (isRegisteredToHeatManager && HeatManager.Instance != null)
         {
-            if (ChaseSceneManager.Instance != null)
-            {
-                ChaseSceneManager.Instance.RemovePlayerFreezeeArea();
-            }
-            isRegisteredToChaseManager = false;
+            HeatManager.Instance.UnregisterFreezeArea(this);
+            isRegisteredToHeatManager = false;
         }
     }
 
@@ -79,7 +69,7 @@ public class FreezeArea : MonoBehaviour
         {
             isPlayerInside = true;
             playerHeatPoint = collision.GetComponent<PlayerHeatPoint>();
-            insideTimer = 0f;
+            // insideTimer = 0f;
         }
     }
 
@@ -89,9 +79,8 @@ public class FreezeArea : MonoBehaviour
         {
             isPlayerInside = false;
             playerHeatPoint = null;
-            insideTimer = 0f;
-
-            ResetChaseManagerRegistration();
+            // insideTimer = 0f;
+            ResetHeatManagerRegistration();
         }
     }
 }

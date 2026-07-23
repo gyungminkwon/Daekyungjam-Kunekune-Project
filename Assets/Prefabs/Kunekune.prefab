@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5062741843599140244}
   - component: {fileID: 4856581285473425661}
   - component: {fileID: 6221979466714774859}
+  - component: {fileID: 6740092801575332499}
   - component: {fileID: 1302025277147217610}
   m_Layer: 0
   m_Name: Kunekune
@@ -179,6 +180,66 @@ PolygonCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.625, y: 4.9375}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.84375, y: 4.375}
+      - {x: 0.59375, y: 4.6875}
+      - {x: 0.28125, y: 4.625}
+      - {x: 0.15625, y: 4.6875}
+      - {x: -0.84375, y: 4.6875}
+      - {x: -0.84375, y: 3.6875}
+      - {x: -0.53125, y: 3}
+      - {x: -0.53125, y: 0.5}
+      - {x: -0.5150528, y: 0.18601632}
+      - {x: 0.5231924, y: 0.1851871}
+      - {x: 0.286314, y: 1.004868}
+      - {x: 0.22515678, y: 2.1866145}
+      - {x: 0.7360201, y: 2.6070447}
+  m_UseDelaunayMesh: 1
+--- !u!60 &6740092801575332499
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648606782356608559}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

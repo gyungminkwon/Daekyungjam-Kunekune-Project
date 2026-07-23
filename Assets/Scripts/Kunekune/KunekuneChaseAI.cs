@@ -65,9 +65,7 @@ public class KunekuneChaseAI : MonoBehaviour
 
     void Update()
     {
-        if (!isChasing || player == null) return;
-
-        // spriteRenderer.flipX = player.position.x < transform.position.x;
+        if (player == null) return;
 
         if (player.position.x < transform.position.x)
         {
@@ -77,6 +75,10 @@ public class KunekuneChaseAI : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
+
+        if (!isChasing) return;
+
+        // spriteRenderer.flipX = player.position.x < transform.position.x;
 
         float currentSpeed = isPlayerInHeat ? heatSpeed : baseSpeed;
 
@@ -104,5 +106,16 @@ public class KunekuneChaseAI : MonoBehaviour
     {
         isChasing = false;
         gameObject.SetActive(false);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (ChaseSceneManager.Instance != null)
+            {
+                ChaseSceneManager.Instance.GameOver(ChaseSceneManager.DeathCause.Kunekune);
+            }
+        }
     }
 }

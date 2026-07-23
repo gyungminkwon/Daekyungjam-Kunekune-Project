@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6311963842576573875}
   - component: {fileID: 6037410886132440706}
   m_Layer: 0
-  m_Name: busstop
+  m_Name: shrine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8439633074456798216}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 77.8, y: -7.2, z: 0}
+  m_LocalPosition: {x: 68.19, y: -21.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 5
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7132885250498206693, guid: 6a853c0dd0e3e0b45b4c31f3363a51f1, type: 3}
+  m_Sprite: {fileID: -7930096515231389821, guid: 2ff40bafe26227a4da9b99d142b58d4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,15 +126,15 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2.84375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6875, y: 4.6875}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 2.75, y: 5.6875}
     newSize: {x: 1.6875, y: 4.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.6875, y: 4.6875}
+  m_Size: {x: 2.75, y: 5.6875}
   m_EdgeRadius: 0

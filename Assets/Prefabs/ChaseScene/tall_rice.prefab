@@ -152,4 +152,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreezeArea
   freezeIntensity: 5
-  gracePeriod: 0.3
+  gracePeriod: 0
