@@ -6,6 +6,9 @@ public class ChangeDateTrigger : MonoBehaviour
     [SerializeField] private PlayerGrowthManager.GrowthStage stage;
     [SerializeField] private ProgressFlag requiredFlag;
 
+    [SerializeField] private SpriteRenderer skyRenderer;
+    [SerializeField] private Sprite nextSky;
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -14,6 +17,8 @@ public class ChangeDateTrigger : MonoBehaviour
             {
                 growth.SetGrowthStage(stage);
                 gameObject.SetActive(false);
+
+                skyRenderer.sprite = nextSky;
             }
         }
         

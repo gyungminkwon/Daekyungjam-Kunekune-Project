@@ -13858,6 +13858,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FirstVisitTrigger
   flag: 7
   triggerText: {fileID: 11400000, guid: 5d7f72b1925dde542994f1aab66a9690, type: 2}
+  skyRenderer: {fileID: 730468409}
+  nextSky: {fileID: -5220808832720324463, guid: 7e87a94b19d689447a5f5196fd2abc0d, type: 3}
 --- !u!1 &1337084117
 GameObject:
   m_ObjectHideFlags: 0
@@ -19551,6 +19553,8 @@ MonoBehaviour:
   growth: {fileID: 1087083071}
   stage: 0
   requiredFlag: 4
+  skyRenderer: {fileID: 730468409}
+  nextSky: {fileID: -6004985616335668903, guid: f745bd690dd265d4a94f3032562a27d1, type: 3}
 --- !u!61 &1894832475
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19742,6 +19746,8 @@ MonoBehaviour:
   growth: {fileID: 1087083071}
   stage: 1
   requiredFlag: 2
+  skyRenderer: {fileID: 730468409}
+  nextSky: {fileID: 7111810508140216828, guid: 7458116b073ab624c8c076e7fa7c3e2a, type: 3}
 --- !u!61 &1908631690
 BoxCollider2D:
   m_ObjectHideFlags: 0

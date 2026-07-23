@@ -6,6 +6,8 @@ public class FirstVisitTrigger : MonoBehaviour
 {
     [SerializeField] private ProgressFlag flag;
     [SerializeField] private TextData triggerText;
+    [SerializeField] SpriteRenderer skyRenderer;
+    [SerializeField] Sprite nextSky;
     private bool isPlayerIn = false;
 
     void Start()
@@ -22,6 +24,7 @@ public class FirstVisitTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isPlayerIn = true;
+            skyRenderer.sprite = nextSky;
         }
     }
 
