@@ -34,16 +34,6 @@ public class HeatArea : MonoBehaviour
                     {
                         HeatManager.Instance.RegisterHeatArea(this);
                     }
-
-                    // ==================================================
-                    // ChaseSceneManager 연계 사항
-                    // ChaseScene에서 플레이어가 HeatArea에 있으면 신호를 보냄
-                    // ==================================================
-                    if (ChaseSceneManager.Instance != null)
-                    {
-                        ChaseSceneManager.Instance.AddPlayerHeatArea();
-                    }
-
                     isRegistered = true;
                 }
             }
@@ -64,16 +54,6 @@ public class HeatArea : MonoBehaviour
             {
                 HeatManager.Instance.UnregisterHeatArea(this);
             }
-
-            // ==================================================
-            // ChaseSceneManager 연계 사항
-            // ChaseScene에서 플레이어가 HeatArea를 빠져나가면 신호를 보냄
-            // ==================================================
-            if (ChaseSceneManager.Instance != null)
-            {
-                ChaseSceneManager.Instance.RemovePlayerHeatArea();
-            }
-
             isRegistered = false;
         }
     }

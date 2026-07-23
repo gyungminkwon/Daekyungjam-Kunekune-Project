@@ -28,8 +28,12 @@ public class HeatManager : MonoBehaviour
     public float CurrentHeat { get; private set; }
 
     private HashSet<HeatArea> activeHeatAreas = new HashSet<HeatArea>();
+    private HashSet<FreezeArea> activeFreezeAreas = new HashSet<FreezeArea>();
     // private float heatupTimer = 0f;
     private float cooldownTimer = 0f;
+
+    public bool IsPlayerInFreezeArea => activeFreezeAreas.Count > 0;
+    public bool IsPlayerInHeatArea => activeHeatAreas.Count > 0;
 
     void Awake()
     {
@@ -54,7 +58,7 @@ public class HeatManager : MonoBehaviour
             cooldownTimer -= Time.deltaTime;
         }
 
-        if (activeHeatAreas.Count > 0)
+        if (activeHeatAreas.Count > 0 && activeFreezeAreas.Count == 0)
         {
             HandleHeatUp();
         }
@@ -73,6 +77,9 @@ public class HeatManager : MonoBehaviour
     {
         activeHeatAreas.Remove(area);
     }
+
+    public void RegisterFreezeArea(FreezeArea area) { activeFreezeAreas.Add(area); }
+    public void UnregisterFreezeArea(FreezeArea area) { activeFreezeAreas.Remove(area); }
 
     private void HandleHeatUp()
     {                     
