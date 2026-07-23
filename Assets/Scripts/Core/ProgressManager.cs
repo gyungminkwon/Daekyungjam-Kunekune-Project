@@ -14,6 +14,7 @@ public enum ProgressFlag
 
     Funeral,
     BrokenPot,
+    DirtyDesk,
 
     FirstVisit_House,
     FirstVisit_School
