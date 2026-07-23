@@ -1197,6 +1197,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProgressManager
   toiletOpenedCount: 0
+--- !u!1 &638137215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638137217}
+  - component: {fileID: 638137216}
+  m_Layer: 0
+  m_Name: Ending Timeline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!320 &638137216
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638137215}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6bcbe48b2cf576040a0e5ab1c0635075, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!4 &638137217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638137215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 97.40643, y: -25.76137, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680370499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3276,6 +3325,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1087083068}
+    - target: {fileID: 4480659597874500110, guid: 71a2bb9c39261834098535d615b6894d, type: 3}
+      propertyPath: timelineDirector
+      value: 
+      objectReference: {fileID: 638137216}
     - target: {fileID: 7053419875036234596, guid: 71a2bb9c39261834098535d615b6894d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.31456375
@@ -3739,3 +3792,4 @@ SceneRoots:
   - {fileID: 5441120660317351972}
   - {fileID: 159589430}
   - {fileID: 525489010}
+  - {fileID: 638137217}

@@ -1,4 +1,7 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -49,7 +52,7 @@ public class ObstacleSpawner : MonoBehaviour
     [Header("엔딩 타임라인")]
     [Tooltip("앞기둥 기준 X 좌표 오프셋")]
     public float endingTriggerOffset = 1.5f;
-    // public PlayableDirector Timeline;
+    public PlayableDirector timelineDirector;
 
     private int currentSpawnCount = 0;
     private bool isFinished = false;
@@ -98,7 +101,7 @@ public class ObstacleSpawner : MonoBehaviour
                     }
                 }
                 
-                // StartCoroutine(PlayEndingSequence());
+                StartCoroutine(PlayEndingSequence());
             }
         }
     }
@@ -160,18 +163,20 @@ public class ObstacleSpawner : MonoBehaviour
         currentSpawnCount++;
     }
 
-    // IEnumerator PlayEndingSequence()
-    // {
-    //     Debug.Log("엔딩 타임라인");
+    private IEnumerator PlayEndingSequence()
+    {
+        Debug.Log("엔딩 타임라인");
 
-    //     float fadeTime = 2f;
+        float fadeTime = 2f;
 
-    //     UIManager.Instance.FadeUI(0f, 1f, fadeTime);
-    //     yield return new WaitForSeconds(fadeTime);
+        UIManager.Instance.FadeUI(0f, 1f, fadeTime);
+        yield return new WaitForSeconds(fadeTime);
 
-    //     if (timelineDirector != null)
-    //     {
-    //         timelineDirector.Play();
-    //     }
-    // }
+        // if (timelineDirector != null)
+        // {
+        //     timelineDirector.Play();
+        // }
+
+        SceneManager.LoadScene("ending scene");
+    }
 }
