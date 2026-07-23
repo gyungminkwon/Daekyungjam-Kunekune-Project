@@ -42,9 +42,11 @@ public class GameManager : MonoBehaviour
         if (Instance == null) 
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
-        else Destroy(gameObject);
+        else 
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentState == GameState.Title && Input.GetKeyDown(KeyCode.Space))
         {
+            Debug.Log("스페이스바 입력 확인! 타임라인을 재생합니다."); //
             StartIntroCutscene();
         }
     }
@@ -81,9 +84,24 @@ public class GameManager : MonoBehaviour
     private void StartIntroCutscene()
     {
         currentState = GameState.Cutscene;
-        introDirector.stopped += OnIntroTimelineEnded;
+        // introDirector.stopped += OnIntroTimelineEnded;
+
+        if (introDirector != null)
+        {
+            introDirector.time = 0;
+            introDirector.Evaluate();
+
+            introDirector.stopped -= OnIntroTimelineEnded;
+            introDirector.stopped += OnIntroTimelineEnded;
+
+            if (titleBannerUI != null) titleBannerUI.SetActive(false);
 
         introDirector.Play();
+        }
+        else
+        {
+            Debug.LogError("introDirector 할당 안 됨");
+        }
     }
 
     private void OnIntroTimelineEnded(PlayableDirector director)

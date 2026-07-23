@@ -246,4 +246,15 @@ public class KunekuneAI : MonoBehaviour
         float newX = transform.position.x + (direction * currentSpeed * Time.deltaTime);
         transform.position = new Vector2(newX, transform.position.y);
     }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (MainGameOverManager.Instance != null)
+            {
+                MainGameOverManager.Instance.TriggerJumpscare();
+            }
+        }
+    }
 }
