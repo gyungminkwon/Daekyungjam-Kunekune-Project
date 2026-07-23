@@ -39,7 +39,11 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null) 
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
         else Destroy(gameObject);
     }
 
@@ -103,10 +107,12 @@ public class GameManager : MonoBehaviour
     public void ChangeDate(Date nextDate)
     {
         currentDate = nextDate;
+        Debug.Log($"현재 : {currentDate}");
     }
 
     public void ChangeState(GameState newState)
     {
         currentState = newState;
+        Debug.Log($"현재 상태 : {currentState}");
     }
 }

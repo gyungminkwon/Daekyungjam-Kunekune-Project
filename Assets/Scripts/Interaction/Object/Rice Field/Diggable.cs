@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class KeyItem : MonoBehaviour, IInteractable
-{   
+public class Diggable : MonoBehaviour, IInteractable
+{
     [SerializeField] private ProgressFlag flag;
     [SerializeField] private Image holdGuage;
     [SerializeField] private float threshold = 3f;  // 획득을 위해 F키를 홀드해야 하는 시간
@@ -10,6 +11,8 @@ public class KeyItem : MonoBehaviour, IInteractable
     [SerializeField] private TextData textData; // 아이템 획득 시 띄울 텍스트
     [SerializeField] private Date targetDate;
     [SerializeField] private bool isDateChanger = false;
+
+    [SerializeField] private bool hasTicket = false;
     private bool isAcquired = false;    // 재획득 방지를 위한 플래그 변수
     private float holdTimer = 0f;
     private Animator anim;
@@ -17,18 +20,22 @@ public class KeyItem : MonoBehaviour, IInteractable
     void Awake()
     {
         anim = GetComponent<Animator>();
-        holdGuage.gameObject.SetActive(true);
         holdGuage.fillAmount = 0f;
     }
 
     public void OnInteractPressed()
     {
+        if (!ProgressManager.Instance.GetFlag(ProgressFlag.HasTrowel)) return;
+
         holdTimer = 0f;
         holdGuage.fillAmount = 0f;
+        anim.SetBool("isDigging", true);
     }
 
     public void OnInteractHeld()
     {
+        if (!ProgressManager.Instance.GetFlag(ProgressFlag.HasTrowel)) return;
+
         holdTimer += Time.deltaTime;
         holdGuage.fillAmount = holdTimer / threshold;
 
@@ -45,7 +52,6 @@ public class KeyItem : MonoBehaviour, IInteractable
         holdTimer = 0f;
         holdGuage.fillAmount = 0f;
 
-        Debug.Log($"{gameObject.name} 아이템 획득");
         TextManager.Instance.PlayText(textData);
 
         ProgressManager.Instance.SetFlag(flag, true);
@@ -61,12 +67,17 @@ public class KeyItem : MonoBehaviour, IInteractable
 
     public void OnInteractReleased()
     {
+        if (!ProgressManager.Instance.GetFlag(ProgressFlag.HasTrowel)) return;
+
         holdTimer = 0f;
         holdGuage.fillAmount = 0f;
+        anim.SetBool("isDigging", false);
     }
 
     public string GetInteractPrompt()
     {
-        return "아이템 획득 (F 홀드)";
+        if (!ProgressManager.Instance.GetFlag(ProgressFlag.HasTrowel)) return null;
+
+        return "땅 파기 (F)";
     }
 }
