@@ -73,8 +73,14 @@ public class GameManager : MonoBehaviour
     private void StartIntroCutscene()
     {
         currentState = GameState.IntroCutscene;
-        introDirector.stopped += OnIntroTimelineEnded;
 
+        // [추가] 스페이스바를 눌러 인트로가 시작될 때 사운드도 함께 재생합니다.
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlaySFX("bus");
+        }
+
+        introDirector.stopped += OnIntroTimelineEnded;
         introDirector.Play();
     }
 
