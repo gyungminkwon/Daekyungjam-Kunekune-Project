@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class Door : MonoBehaviour, IInteractable
@@ -16,8 +17,10 @@ public class Door : MonoBehaviour, IInteractable
     [Header("Text Settings")]
     [SerializeField] private TextData lockedMonologue;
 
+    [Header("Camera Settings")]
+    [SerializeField] private CinemachineCamera nextCamera;
+    [SerializeField] private CinemachineCamera currentCamera;
     private SpriteRenderer sr;
-    private PlayerInput playerInput;
 
     void Awake()
     {
@@ -85,6 +88,15 @@ public class Door : MonoBehaviour, IInteractable
 
         // 페이드 아웃/인
         UIManager.Instance?.FadeUI(0, 1, 0.3f);
+        if (nextCamera != null) 
+        {
+            currentCamera.Follow = null;
+            nextCamera.Follow = null;
+
+            nextCamera.Priority = 10;
+            currentCamera.Priority = 0;
+        }
+        
         // 카메라 이동 기다리기
         yield return new WaitForSeconds(0.3f);
 
@@ -101,6 +113,8 @@ public class Door : MonoBehaviour, IInteractable
             {
                 player.transform.position = targetPos.position;
             }
+
+            if (nextCamera != null) nextCamera.Follow = GameObject.FindGameObjectWithTag("Player").transform;
 
             yield return new WaitForSeconds(1f);
 
