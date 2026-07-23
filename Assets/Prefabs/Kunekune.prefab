@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4856581285473425661}
   - component: {fileID: 6221979466714774859}
   - component: {fileID: 1302025277147217610}
+  - component: {fileID: 1915933487687312907}
   m_Layer: 0
   m_Name: Kunekune
   m_TagString: Untagged
@@ -230,3 +231,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1915933487687312907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648606782356608559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f02d5e4a88f72db468688ee5b887e16c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KunekuneEvent

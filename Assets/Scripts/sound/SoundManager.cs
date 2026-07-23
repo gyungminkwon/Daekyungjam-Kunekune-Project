@@ -109,4 +109,21 @@ public class SoundManager : MonoBehaviour
             bgmSource.Stop();
         }
     }
+    // 재생 중인 효과음을 즉시 끄는 함수
+    public void StopSFX()
+    {
+        if (sfxSource != null && sfxSource.isPlaying)
+        {
+            sfxSource.Stop();
+        }
+    }
+    // 보관함에서 소리 파일(AudioClip)만 쏙 빼주는 함수
+    public AudioClip GetSFX(string name)
+    {
+        if (sfxDictionary.ContainsKey(name))
+        {
+            return sfxDictionary[name];
+        }
+        return null; // 못 찾으면 빈 값 반환
+    }
 }
